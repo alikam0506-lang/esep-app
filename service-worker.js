@@ -3,9 +3,9 @@
 // offline use is safe: nothing needs a live connection except opening
 // WhatsApp/Telegram links or the Google Fonts used for styling).
 
-const CACHE_NAME = 'esep-cache-v1';
+const CACHE_NAME = 'esep-cache-v2';
 const APP_SHELL = [
-  './esep.html',
+  './index.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
@@ -30,12 +30,26 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Cache-first for the app shell; network-first (with cache fallback) for
-// everything else, so the app keeps working offline once it's been opened
-// at least once.
+// Navigation requests (opening the app itself) go network-first, so the
+// installed shortcut always shows the latest version when online, and only
+// falls back to the cached copy if there's no connection. Everything else
+// (icons, manifest) stays cache-first since those rarely change.
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
+
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          const resClone = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(req, resClone));
+          return res;
+        })
+        .catch(() => caches.match(req).then((cached) => cached || caches.match('./index.html')))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(req).then((cached) => {
