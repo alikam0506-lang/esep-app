@@ -1,0 +1,31 @@
+{
+  "name": "ЭСЕП — Дүкөн эсеби",
+  "short_name": "ЭСЕП",
+  "description": "Дүкөн үчүн товар, сатуу жана карыз эсебин жүргүзүүчү колдонмо",
+  "start_url": "./esep.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F3EC",
+  "theme_color": "#14532D",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
