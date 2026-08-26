@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.alikam0506_lang.twa",
+        "sha256_cert_fingerprints": ["CA:CF:1A:53:C8:EF:43:E6:BA:11:2A:84:A8:A3:8B:E3:53:A4:D2:70:11:4E:A9:AF:03:60:14:B4:8C:BC:4A:F8"]
+      }
+    }]
