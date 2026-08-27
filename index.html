@@ -335,6 +335,7 @@ const ICONS = {
   warning: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v4"/><path d="M12 17.5v.01"/></svg>`,
   chevron: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`,
   refresh: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg>`,
+  edit: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-5"/><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4z"/></svg>`,
   heart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>`,
   star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 18.3l-6.2 3.3L7 14.7l-5-4.9 6.9-1z"/></svg>`,
   arrowUp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>`,
@@ -396,6 +397,7 @@ const I18N = {
     pay_debt_amount_label:'Канча акча төлөндү?', record_payment_btn:'Төлөмдү каттоо',
     toast_payment_recorded:'Төлөм катталды', current_debt_inline_prefix:'Учурдагы карыз:', debt_payment_in_label:'Карыз төлөмү',
     remaining_after_payment_prefix:'Төлөгөндөн кийин калат:',
+    paid_now_label:'Азыр канча төлөндү? (милдеттүү эмес)',
     edit_client_info_title:'Клиентти түзөтүү',
     edit_sale_title:'Сатууну түзөтүү', available_suffix:'жеткиликтүү:',
     save_btn:'Сактоо', toast_choose_product:'Товар тандаңыз', toast_sale_updated:'Сатуу жаңыртылды',
@@ -433,6 +435,8 @@ const I18N = {
     tab_report:'Отчёт', report_units_sold_label:'Сатылган штук', report_total_revenue_label:'Сатылган товарлардын суммасы',
     report_total_profit_label:'Пайда', remaining_qty_label:'Калды', sold_qty_label:'Сатылды',
     report_top_products_title:'Товарлар боюнча',
+    report_tab_products:'Товарлар', report_tab_clients:'Кардарлар',
+    report_client_purchases_title:'Кардарлар боюнча', empty_no_client_purchases:'Сатуу жок',
     overall_debt_title:'Жалпы карыз абалы', paid_share_label:'Төлөнгөн', unpaid_share_label:'Төлөнбөгөн',
     app_version_prefix:'ЭСЕП · версия',
     settings_title:'Жөндөөлөр', shop_name_label:'Дүкөндүн аты', shop_subtitle_label:'Кичи жазуу (баш бетте)',
@@ -563,6 +567,7 @@ const I18N = {
     pay_debt_amount_label:'Сколько оплачено?', record_payment_btn:'Записать оплату',
     toast_payment_recorded:'Оплата записана', current_debt_inline_prefix:'Текущий долг:', debt_payment_in_label:'Оплата долга',
     remaining_after_payment_prefix:'Останется после оплаты:',
+    paid_now_label:'Сколько оплачено сейчас? (необязательно)',
     edit_client_info_title:'Редактировать клиента',
     edit_sale_title:'Редактировать продажу', available_suffix:'доступно:',
     save_btn:'Сохранить', toast_choose_product:'Выберите товар', toast_sale_updated:'Продажа обновлена',
@@ -600,6 +605,8 @@ const I18N = {
     tab_report:'Отчёт', report_units_sold_label:'Продано штук', report_total_revenue_label:'Сумма проданных товаров',
     report_total_profit_label:'Прибыль', remaining_qty_label:'Остаток', sold_qty_label:'Продано',
     report_top_products_title:'По товарам',
+    report_tab_products:'Товары', report_tab_clients:'Клиенты',
+    report_client_purchases_title:'По клиентам', empty_no_client_purchases:'Продаж нет',
     overall_debt_title:'Общее состояние долгов', paid_share_label:'Оплачено', unpaid_share_label:'Не оплачено',
     app_version_prefix:'ЭСЕП · версия',
     settings_title:'Настройки', shop_name_label:'Название магазина', shop_subtitle_label:'Подзаголовок (на главной)',
@@ -730,6 +737,7 @@ const I18N = {
     pay_debt_amount_label:'How much was paid?', record_payment_btn:'Record payment',
     toast_payment_recorded:'Payment recorded', current_debt_inline_prefix:'Current debt:', debt_payment_in_label:'Debt payment',
     remaining_after_payment_prefix:'Will remain after payment:',
+    paid_now_label:'How much is paid now? (optional)',
     edit_client_info_title:'Edit client',
     edit_sale_title:'Edit sale', available_suffix:'available:',
     save_btn:'Save', toast_choose_product:'Choose a product', toast_sale_updated:'Sale updated',
@@ -767,6 +775,8 @@ const I18N = {
     tab_report:'Report', report_units_sold_label:'Units sold', report_total_revenue_label:'Total sold value',
     report_total_profit_label:'Profit', remaining_qty_label:'Left', sold_qty_label:'Sold',
     report_top_products_title:'By product',
+    report_tab_products:'Products', report_tab_clients:'Customers',
+    report_client_purchases_title:'By customer', empty_no_client_purchases:'No sales',
     overall_debt_title:'Overall debt status', paid_share_label:'Paid', unpaid_share_label:'Unpaid',
     app_version_prefix:'ESEP · version',
     settings_title:'Settings', shop_name_label:'Shop name', shop_subtitle_label:'Subtitle (on home screen)',
@@ -897,6 +907,7 @@ const I18N = {
     pay_debt_amount_label:'Қанша төленді?', record_payment_btn:'Төлемді тіркеу',
     toast_payment_recorded:'Төлем тіркелді', current_debt_inline_prefix:'Ағымдағы қарыз:', debt_payment_in_label:'Қарыз төлемі',
     remaining_after_payment_prefix:'Төлегеннен кейін қалады:',
+    paid_now_label:'Қазір қанша төленді? (міндетті емес)',
     edit_client_info_title:'Клиентті өзгерту',
     edit_sale_title:'Сатуды өзгерту', available_suffix:'қолжетімді:',
     save_btn:'Сақтау', toast_choose_product:'Тауарды таңдаңыз', toast_sale_updated:'Сату жаңартылды',
@@ -934,6 +945,8 @@ const I18N = {
     tab_report:'Есеп', report_units_sold_label:'Сатылған дана', report_total_revenue_label:'Сатылған тауарлар сомасы',
     report_total_profit_label:'Пайда', remaining_qty_label:'Қалды', sold_qty_label:'Сатылды',
     report_top_products_title:'Тауарлар бойынша',
+    report_tab_products:'Тауарлар', report_tab_clients:'Клиенттер',
+    report_client_purchases_title:'Клиенттер бойынша', empty_no_client_purchases:'Сату жоқ',
     overall_debt_title:'Жалпы қарыз жағдайы', paid_share_label:'Төленді', unpaid_share_label:'Төленбеді',
     app_version_prefix:'ЭСЕП · нұсқа',
     settings_title:'Баптаулар', shop_name_label:'Дүкеннің аты', shop_subtitle_label:'Кіші жазба (басты бетте)',
@@ -1064,6 +1077,7 @@ const I18N = {
     pay_debt_amount_label:"Qancha to'landi?", record_payment_btn:"To'lovni qayd etish",
     toast_payment_recorded:"To'lov qayd etildi", current_debt_inline_prefix:'Joriy qarz:', debt_payment_in_label:"Qarz to'lovi",
     remaining_after_payment_prefix:"To'lovdan keyin qoladi:",
+    paid_now_label:"Hozir qancha to'landi? (majburiy emas)",
     edit_client_info_title:'Mijozni tahrirlash',
     edit_sale_title:'Sotuvni tahrirlash', available_suffix:'mavjud:',
     save_btn:'Saqlash', toast_choose_product:'Tovarni tanlang', toast_sale_updated:'Sotuv yangilandi',
@@ -1101,6 +1115,8 @@ const I18N = {
     tab_report:'Hisobot', report_units_sold_label:'Sotilgan dona', report_total_revenue_label:'Sotilgan tovarlar summasi',
     report_total_profit_label:'Foyda', remaining_qty_label:'Qoldi', sold_qty_label:'Sotildi',
     report_top_products_title:'Tovarlar bo\'yicha',
+    report_tab_products:'Tovarlar', report_tab_clients:'Mijozlar',
+    report_client_purchases_title:'Mijozlar bo\'yicha', empty_no_client_purchases:"Sotuv yo'q",
     overall_debt_title:'Umumiy qarz holati', paid_share_label:"To'landi", unpaid_share_label:"To'lanmadi",
     app_version_prefix:'ESEP · versiya',
     settings_title:'Sozlamalar', shop_name_label:"Do'kon nomi", shop_subtitle_label:'Kichik yozuv (bosh sahifada)',
@@ -1231,6 +1247,7 @@ const I18N = {
     pay_debt_amount_label:'Ne kadar ödendi?', record_payment_btn:'Ödemeyi kaydet',
     toast_payment_recorded:'Ödeme kaydedildi', current_debt_inline_prefix:'Güncel borç:', debt_payment_in_label:'Borç ödemesi',
     remaining_after_payment_prefix:'Ödeme sonrası kalan:',
+    paid_now_label:'Şimdi ne kadar ödendi? (isteğe bağlı)',
     edit_client_info_title:'Müşteriyi düzenle',
     edit_sale_title:'Satışı düzenle', available_suffix:'mevcut:',
     save_btn:'Kaydet', toast_choose_product:'Ürün seçin', toast_sale_updated:'Satış güncellendi',
@@ -1268,6 +1285,8 @@ const I18N = {
     tab_report:'Rapor', report_units_sold_label:'Satılan adet', report_total_revenue_label:'Satılan ürünlerin tutarı',
     report_total_profit_label:'Kâr', remaining_qty_label:'Kaldı', sold_qty_label:'Satıldı',
     report_top_products_title:'Ürünlere göre',
+    report_tab_products:'Ürünler', report_tab_clients:'Müşteriler',
+    report_client_purchases_title:'Müşterilere göre', empty_no_client_purchases:'Satış yok',
     overall_debt_title:'Genel borç durumu', paid_share_label:'Ödendi', unpaid_share_label:'Ödenmedi',
     app_version_prefix:'ESEP · sürüm',
     settings_title:'Ayarlar', shop_name_label:'Mağaza adı', shop_subtitle_label:'Alt başlık (ana ekranda)',
@@ -1361,11 +1380,13 @@ let invSearch = '';
 let clientSearch = '';
 let clientsSubTab = 'clients';
 let kassaSubTab = 'debts';
+let reportSubTab = 'products';
 let confirmCashDelete = null;
 let salesSubTab = 'new';
 let payMethod = 'cash';
 let discountType = 'percent';
 let discountValue = 0;
+let paidNowValue = '';
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
 const fmt = n => Math.round(n||0).toLocaleString('ru-RU') + ' сом';
@@ -1806,13 +1827,16 @@ function renderDashboard(){
 function saleRow(s){
   const productLabel = s.items.map(i=>i.name).join(', ') || '—';
   return `
-    <div class="row">
+    <div class="row" data-action="edit-sale" data-id="${s.id}" style="cursor:pointer;">
       <div>
         <div class="who">${s.customer || t('default_customer')}</div>
         <div class="meta">${productLabel.length>34?productLabel.slice(0,34)+'…':productLabel}</div>
         ${statusBadge(s.status)}
       </div>
-      <div class="amt">${fmt(s.total)}</div>
+      <div style="text-align:right; display:flex; align-items:center; gap:8px;">
+        <div class="amt">${fmt(s.total)}</div>
+        <span style="width:15px;height:15px; color:var(--muted-2); display:flex;">${ICONS.edit}</span>
+      </div>
     </div>
   `;
 }
@@ -1953,9 +1977,10 @@ function renderNewSale(){
     </div>
 
     <div class="section-head"><h3>${t('customer_section_title')}</h3></div>
-    <div class="field-row">
+    <div class="field-row" style="position:relative;">
       <div class="field" style="flex:1;">
-        <input id="customer-name" type="text" placeholder="${t('customer_ph')}" value="${window._customerDraft||''}"/>
+        <input id="customer-name" type="text" placeholder="${t('customer_ph')}" value="${window._customerDraft||''}" autocomplete="off"/>
+        <div id="customer-suggestions" style="display:none; position:absolute; top:100%; left:0; right:56px; background:var(--paper); border:1px solid var(--border); border-radius:10px; margin-top:4px; box-shadow:0 6px 16px rgba(0,0,0,0.12); z-index:20; max-height:180px; overflow-y:auto;"></div>
       </div>
       <button id="pick-client-btn" style="flex-shrink:0; display:flex; align-items:center; gap:6px; padding:0 14px; border-radius:9px; border:1px solid var(--border); background:var(--paper); color:var(--primary); font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; cursor:pointer;">
         <span style="width:16px;height:16px; display:flex;">${ICONS.people}</span> ${t('pick_btn')}
@@ -1977,6 +2002,18 @@ function renderNewSale(){
     <div class="pay-option ${payMethod==='cash'?'active':''}" data-pay="cash">${ICONS.cash}<span class="t">${t('pay_cash')}</span></div>
     <div class="pay-option ${payMethod==='card'?'active':''}" data-pay="card">${ICONS.card}<span class="t">${t('pay_card')}</span></div>
     <div class="pay-option ${payMethod==='debt'?'active':''}" data-pay="debt">${ICONS.debtc}<span class="t">${t('pay_debt')}</span></div>
+    ${payMethod==='debt' ? `
+      <div class="field" style="margin-top:10px;">
+        <label>${t('paid_now_label')}</label>
+        <input id="paid-now-input" type="text" inputmode="numeric" placeholder="0" value="${paidNowValue}">
+      </div>
+      ${(() => {
+        const paidNowNum = Math.max(0, Math.min(parseFloat(paidNowValue)||0, total));
+        if(paidNowNum<=0) return '';
+        const remaining = Math.max(0, total - paidNowNum);
+        return `<div id="paid-now-preview" class="mono" style="font-size:12.5px; font-weight:600; color:${remaining>0?'var(--debt)':'var(--primary)'}; margin:-6px 0 10px;">${t('remaining_after_payment_prefix')} ${fmt(remaining)}</div>`;
+      })()}
+    ` : ''}
 
     <div class="ledger-card">
       ${discountAmount>0 ? `
@@ -2167,7 +2204,7 @@ function openClientSheet(key){
       <div class="sheet-head">
         <h2>${c.name}</h2>
         <div style="display:flex; gap:8px; align-items:center;">
-          <button id="edit-client-info" title="${t('edit_client_info_title')}" style="width:30px;height:30px; border-radius:99px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.undo}</span></button>
+          <button id="edit-client-info" title="${t('edit_client_info_title')}" style="width:30px;height:30px; border-radius:99px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.edit}</span></button>
           <button data-action="close-sheet" style="width:30px;height:30px; border-radius:99px; border:1px solid var(--border); background:var(--paper); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center;">${ICONS.x}</button>
         </div>
       </div>
@@ -2218,7 +2255,7 @@ function openClientSheet(key){
                           <span style="font-weight:700; color:var(--accent);">${t('event_return_label')}</span>
                           <span style="font-weight:400; color:var(--muted); font-size:12px;">${new Date(r.date).toLocaleDateString('ru-RU')}</span>
                         </div>
-                        ${r.items && r.items.length ? `<div class="meta">${r.items.map(i=>i.name).join(', ')}</div>` : ''}
+                        ${r.items && r.items.length ? `<div class="meta">${r.items.map(i=>`${i.name} · ${i.qty} ${t('unit_suffix')}`).join(', ')}</div>` : ''}
                         ${r.condition ? `<span class="badge ${isValid?'paid':'debt'} inline" style="margin-top:4px;">${isValid?ICONS.check:ICONS.x} ${isValid?t('badge_condition_valid'):t('badge_condition_invalid')}</span>` : ''}
                       </div>
                       <div style="text-align:right;">
@@ -2250,17 +2287,18 @@ function openClientSheet(key){
                       <div style="text-align:right;">
                         <div class="amt" style="color:var(--primary);">+${fmt(p.amount)}</div>
                         <div style="display:flex; gap:6px; margin-top:6px; justify-content:flex-end;">
-                          <button data-action="edit-payment" data-id="${p.id}" title="${t('edit_payment_title')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.undo}</span></button>
+                          <button data-action="edit-payment" data-id="${p.id}" title="${t('edit_payment_title')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.edit}</span></button>
                           <button data-action="ask-delete-payment" data-id="${p.id}" title="${t('yes_delete')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--debt-soft); background:var(--paper); color:var(--debt); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.trash}</span></button>
                         </div>
                       </div>
                     </div>
                     ${editingPaymentId===p.id ? `
                       <div style="margin-top:10px; padding:10px; border-radius:10px; background:var(--primary-soft);">
-                        <div class="field" style="margin-bottom:8px;">
+                        <div class="field" style="margin-bottom:6px;">
                           <label>${t('pay_debt_amount_label')}</label>
                           <input id="edit-payment-amount" type="text" inputmode="numeric" value="${p.amount}">
                         </div>
+                        <div id="edit-remaining-preview" class="mono" style="font-size:12.5px; font-weight:600; color:var(--muted); margin-bottom:10px;"></div>
                         <div style="display:flex; gap:8px;">
                           <button data-action="confirm-edit-payment" data-id="${p.id}" style="flex:1; padding:8px; border-radius:8px; border:none; background:var(--primary); color:#fff; font-weight:600; font-size:12.5px; cursor:pointer;">${t('save_btn')}</button>
                           <button data-action="cancel-edit-payment" style="flex:1; padding:8px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); font-weight:600; font-size:12.5px; cursor:pointer;">${t('no_cancel')}</button>
@@ -2292,7 +2330,7 @@ function openClientSheet(key){
                       <div class="amt">${fmt(s.total)}</div>
                       ${s.status==='debt' && s.paidAmount>0 ? `<div class="meta" style="color:var(--primary);">${t('current_debt_inline_prefix')} ${fmt(saleOutstanding(s))}</div>` : ''}
                       <div style="display:flex; gap:6px; margin-top:6px; justify-content:flex-end;">
-                        <button data-action="edit-sale" data-id="${s.id}" title="${t('edit_sale_title')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.undo}</span></button>
+                        <button data-action="edit-sale" data-id="${s.id}" title="${t('edit_sale_title')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.edit}</span></button>
                         <button data-action="ask-delete-sale" data-id="${s.id}" title="${t('yes_delete')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--debt-soft); background:var(--paper); color:var(--debt); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.trash}</span></button>
                       </div>
                     </div>
@@ -2342,11 +2380,13 @@ function openClientSheet(key){
       payInput.addEventListener('input', updatePreview);
     }
     const confirmPayBtn = document.getElementById('confirm-pay-amount');
-    if(confirmPayBtn) confirmPayBtn.onclick = async () => {
+    if(confirmPayBtn) confirmPayBtn.onclick = async (e) => {
+      if(e.target.disabled) return;
       const input = document.getElementById('pay-amount-input');
       const raw = parseFloat(input.value);
       const amount = Number.isFinite(raw) && raw>0 ? Math.min(raw, c.debt) : 0;
       if(amount<=0){ showToast(t('toast_enter_amount')); return; }
+      e.target.disabled = true;
       await payCustomerDebt(c.name, amount);
       closeSheet();
       render();
@@ -2387,6 +2427,25 @@ function openClientSheet(key){
       editingPaymentId = null;
       refresh();
     }));
+    const editPaymentInput = document.getElementById('edit-payment-amount');
+    const editRemainingPreview = document.getElementById('edit-remaining-preview');
+    if(editPaymentInput && editRemainingPreview && editingPaymentId){
+      const editingPayment = state.debtPayments.find(x=>x.id===editingPaymentId);
+      const debtBeforeThisPayment = c.debt + (editingPayment ? editingPayment.amount : 0);
+      const updatePreview = () => {
+        const raw = parseFloat(editPaymentInput.value);
+        if(Number.isFinite(raw) && raw>0){
+          const clamped = Math.min(raw, debtBeforeThisPayment);
+          const remaining = Math.max(0, debtBeforeThisPayment - clamped);
+          editRemainingPreview.style.color = remaining>0 ? 'var(--debt)' : 'var(--primary)';
+          editRemainingPreview.textContent = `${t('remaining_after_payment_prefix')} ${fmt(remaining)}`;
+        } else {
+          editRemainingPreview.textContent = '';
+        }
+      };
+      editPaymentInput.addEventListener('input', updatePreview);
+      updatePreview();
+    }
     document.querySelectorAll('[data-action="confirm-edit-payment"]').forEach(b=>b.addEventListener('click', async ()=>{
       const paymentId = b.dataset.id;
       const input = document.getElementById('edit-payment-amount');
@@ -2447,6 +2506,8 @@ function openEditSaleSheet(saleId){
   const editCart = {};
   s.items.forEach(i=>{ editCart[i.productId] = i.qty; });
   let editPayment = s.payment==='debt' || s.payment==='card' || s.payment==='cash' ? s.payment : 'cash';
+  let editCustomerDraft = s.customer || '';
+  let editPaidNowValue = s.payment==='debt' ? String(s.paidAmount||0) : '';
   const originalQtyOf = (pid) => (s.items.find(i=>i.productId===pid)?.qty) || 0;
   const availableOf = (p) => p.stock + originalQtyOf(p.id);
 
@@ -2480,13 +2541,26 @@ function openEditSaleSheet(saleId){
         }).join('')}
       </div>
       <div class="section-head"><h3>${t('customer_section_title')}</h3></div>
-      <div class="field">
-        <input id="edit-customer" type="text" value="${s.customer||''}" placeholder="${t('customer_ph')}">
+      <div class="field-row" style="position:relative;">
+        <div class="field" style="flex:1;">
+          <input id="edit-customer" type="text" value="${editCustomerDraft}" placeholder="${t('customer_ph')}" autocomplete="off">
+          <div id="edit-customer-suggestions" style="display:none; position:absolute; top:100%; left:0; right:56px; background:var(--paper); border:1px solid var(--border); border-radius:10px; margin-top:4px; box-shadow:0 6px 16px rgba(0,0,0,0.12); z-index:20; max-height:180px; overflow-y:auto;"></div>
+        </div>
+        <button id="edit-pick-client-btn" style="flex-shrink:0; display:flex; align-items:center; gap:6px; padding:0 14px; border-radius:9px; border:1px solid var(--border); background:var(--paper); color:var(--primary); font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; cursor:pointer;">
+          <span style="width:16px;height:16px; display:flex;">${ICONS.people}</span> ${t('pick_btn')}
+        </button>
       </div>
       <div class="section-head"><h3>${t('payment_section_title')}</h3></div>
       <div class="pay-option ${editPayment==='cash'?'active':''}" data-epay="cash">${ICONS.cash}<span class="t">${t('pay_cash')}</span></div>
       <div class="pay-option ${editPayment==='card'?'active':''}" data-epay="card">${ICONS.card}<span class="t">${t('pay_card')}</span></div>
       <div class="pay-option ${editPayment==='debt'?'active':''}" data-epay="debt">${ICONS.debtc}<span class="t">${t('pay_debt')}</span></div>
+      ${editPayment==='debt' ? `
+        <div class="field" style="margin-top:10px;">
+          <label>${t('paid_now_label')}</label>
+          <input id="edit-paid-now-input" type="text" inputmode="numeric" placeholder="0" value="${editPaidNowValue}">
+        </div>
+        <div id="edit-paid-now-preview" class="mono" style="font-size:12.5px; font-weight:600; color:var(--muted); margin:-6px 0 10px;"></div>
+      ` : ''}
       <div class="ledger-card" style="margin-top:12px;">
         <div class="receipt-total">
           <span class="label">${t('total_label')}</span>
@@ -2515,8 +2589,65 @@ function openEditSaleSheet(saleId){
     }));
     document.querySelectorAll('[data-epay]').forEach(b=>b.addEventListener('click', ()=>{
       editPayment = b.dataset.epay;
-      document.querySelectorAll('[data-epay]').forEach(x=>x.classList.toggle('active', x.dataset.epay===editPayment));
+      refresh();
     }));
+    const editPaidNowInput = document.getElementById('edit-paid-now-input');
+    const editPaidNowPreview = document.getElementById('edit-paid-now-preview');
+    if(editPaidNowInput && editPaidNowPreview){
+      const updateEditPaidPreview = () => {
+        const total = Object.entries(editCart).filter(([,q])=>q>0).reduce((sum,[pid,q])=>{
+          const p = state.products.find(x=>x.id===pid);
+          return sum + (p ? p.price*q : 0);
+        },0);
+        const paidNowNum = Math.max(0, Math.min(parseFloat(editPaidNowInput.value)||0, total));
+        if(paidNowNum<=0){ editPaidNowPreview.textContent = ''; return; }
+        const remaining = Math.max(0, total - paidNowNum);
+        editPaidNowPreview.style.color = remaining>0 ? 'var(--debt)' : 'var(--primary)';
+        editPaidNowPreview.textContent = `${t('remaining_after_payment_prefix')} ${fmt(remaining)}`;
+      };
+      editPaidNowInput.addEventListener('input', e=>{
+        editPaidNowValue = e.target.value;
+        updateEditPaidPreview();
+      });
+      updateEditPaidPreview();
+    }
+    const editCustInput = document.getElementById('edit-customer');
+    const editCustSuggestions = document.getElementById('edit-customer-suggestions');
+    if(editCustInput){
+      editCustInput.addEventListener('input', e=>{
+        editCustomerDraft = e.target.value;
+        if(!editCustSuggestions) return;
+        const q = e.target.value.trim().toLowerCase();
+        if(!q){ editCustSuggestions.style.display = 'none'; editCustSuggestions.innerHTML = ''; return; }
+        const names = [...new Set(customerStats().map(c=>c.name))]
+          .filter(n=>n!==t('no_name_client') && n.toLowerCase().includes(q))
+          .slice(0, 6);
+        if(names.length===0){ editCustSuggestions.style.display = 'none'; editCustSuggestions.innerHTML = ''; return; }
+        editCustSuggestions.innerHTML = names.map(n=>`
+          <div class="edit-cust-suggestion" data-name="${n}" style="padding:10px 14px; cursor:pointer; font-size:13.5px; border-bottom:1px solid var(--border);">${n}</div>
+        `).join('');
+        editCustSuggestions.style.display = 'block';
+        editCustSuggestions.querySelectorAll('.edit-cust-suggestion').forEach(row=>{
+          row.addEventListener('click', ()=>{
+            editCustInput.value = row.dataset.name;
+            editCustomerDraft = row.dataset.name;
+            editCustSuggestions.style.display = 'none';
+            editCustSuggestions.innerHTML = '';
+          });
+        });
+      });
+      editCustInput.addEventListener('blur', ()=>{
+        setTimeout(()=>{ if(editCustSuggestions){ editCustSuggestions.style.display = 'none'; } }, 150);
+      });
+    }
+    const editPickBtn = document.getElementById('edit-pick-client-btn');
+    if(editPickBtn) editPickBtn.addEventListener('click', ()=>{
+      openPickClientSheet((name)=>{
+        editCustomerDraft = name;
+        openSheet(bodyHtml());
+        bindEditSheet();
+      });
+    });
     const saveBtn = document.getElementById('save-edit-sale');
     if(saveBtn) saveBtn.onclick = async () => {
       const newItems = Object.entries(editCart).filter(([,q])=>q>0).map(([pid,q])=>{
@@ -2534,13 +2665,24 @@ function openEditSaleSheet(saleId){
       });
       s.items = newItems;
       s.total = newItems.reduce((sum,i)=>sum+i.price*i.qty,0);
-      s.customer = document.getElementById('edit-customer').value.trim();
+      s.customer = (document.getElementById('edit-customer')?.value ?? editCustomerDraft).trim();
       s.payment = editPayment;
-      s.status = editPayment==='debt' ? 'debt' : 'paid';
+      if(editPayment==='debt'){
+        const paidNow = Math.max(0, Math.min(parseFloat(editPaidNowValue)||0, s.total));
+        s.paidAmount = paidNow;
+        s.status = paidNow < s.total ? 'debt' : 'paid';
+      } else {
+        s.paidAmount = 0;
+        s.status = 'paid';
+      }
+      const priorDebt = s.customer
+        ? state.sales.filter(x=>x.id!==s.id && (x.customer||'').trim()===s.customer && x.status==='debt').reduce((sum,x)=>sum+saleOutstanding(x),0)
+        : 0;
       await saveData();
       closeSheet();
       render();
       showToast(t('toast_sale_updated'));
+      openReceiptSheet(s, priorDebt);
     };
   }
 
@@ -2665,25 +2807,75 @@ function renderSalesReport(){
       <div class="value mono" style="color:var(--primary);">${fmt(totalProfit)}</div>
     </div>
 
-    <div class="section-head" style="margin-top:0;"><h3>${t('report_top_products_title')}</h3></div>
-    <div class="card product-list">
-      ${rows.length ? rows.map(p=>{
-        const sold = soldByProduct[p.id]||0;
-        const invalidCount = invalidReturnsByProduct[p.id]||0;
-        return `
-        <div class="product">
-          <div class="icon">${ICONS.box}</div>
-          <div class="info">
-            <div class="name">${p.name}</div>
-            <div class="cat">${fmt(p.price)}</div>
-            <div style="display:flex; gap:10px; margin-top:3px; flex-wrap:wrap;">
-              <span class="mono" style="font-size:11.5px; font-weight:700; color:var(--debt);">${t('remaining_qty_label')}: ${p.stock}</span>
-              <span class="mono" style="font-size:11.5px; font-weight:700; color:var(--primary);">${t('sold_qty_label')}: ${sold}</span>
-              ${invalidCount>0 ? `<span class="mono" style="font-size:11.5px; font-weight:700; color:var(--accent);">${t('badge_condition_invalid')}: ${invalidCount}</span>` : ''}
+    <div class="tabs" style="margin-bottom:14px;">
+      <button class="${reportSubTab==='products'?'active':''}" data-reporttab="products">${t('report_tab_products')}</button>
+      <button class="${reportSubTab==='clients'?'active':''}" data-reporttab="clients">${t('report_tab_clients')}</button>
+    </div>
+
+    ${reportSubTab==='products' ? `
+      <div class="section-head" style="margin-top:0;"><h3>${t('report_top_products_title')}</h3></div>
+      <div class="card product-list">
+        ${rows.length ? rows.map(p=>{
+          const sold = soldByProduct[p.id]||0;
+          const invalidCount = invalidReturnsByProduct[p.id]||0;
+          return `
+          <div class="product">
+            <div class="icon">${ICONS.box}</div>
+            <div class="info">
+              <div class="name">${p.name}</div>
+              <div class="cat">${fmt(p.price)}</div>
+              <div style="display:flex; gap:10px; margin-top:3px; flex-wrap:wrap;">
+                <span class="mono" style="font-size:11.5px; font-weight:700; color:var(--debt);">${t('remaining_qty_label')}: ${p.stock}</span>
+                <span class="mono" style="font-size:11.5px; font-weight:700; color:var(--primary);">${t('sold_qty_label')}: ${sold}</span>
+                ${invalidCount>0 ? `<span class="mono" style="font-size:11.5px; font-weight:700; color:var(--accent);">${t('badge_condition_invalid')}: ${invalidCount}</span>` : ''}
+              </div>
             </div>
           </div>
-        </div>
-      `;}).join('') : emptyBlock(t('empty_no_results_title'), '')}
+        `;}).join('') : emptyBlock(t('empty_no_results_title'), '')}
+      </div>
+    ` : renderClientPurchaseReport()}
+  `;
+}
+
+function renderClientPurchaseReport(){
+  const byClient = {};
+  state.sales.forEach(s=>{
+    if(s.status==='returned') return;
+    const name = (s.customer||'').trim() || t('no_name_client');
+    if(!byClient[name]) byClient[name] = {};
+    s.items.forEach(i=>{
+      byClient[name][i.name] = (byClient[name][i.name]||0) + i.qty;
+    });
+  });
+  const clientNames = Object.keys(byClient).sort((a,b)=>{
+    const totalA = Object.values(byClient[a]).reduce((s,q)=>s+q,0);
+    const totalB = Object.values(byClient[b]).reduce((s,q)=>s+q,0);
+    return totalB - totalA;
+  });
+
+  return `
+    <div class="section-head" style="margin-top:0;"><h3>${t('report_client_purchases_title')}</h3></div>
+    <div class="card">
+      ${clientNames.length ? clientNames.map(name=>{
+        const products = byClient[name];
+        const totalQty = Object.values(products).reduce((s,q)=>s+q,0);
+        return `
+          <div class="row" style="display:block;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+              <div class="who">${name}</div>
+              <span class="mono" style="font-size:11.5px; font-weight:700; color:var(--primary);">${totalQty} ${t('unit_suffix')}</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:3px;">
+              ${Object.entries(products).sort((a,b)=>b[1]-a[1]).map(([pname,qty])=>`
+                <div style="display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted);">
+                  <span>${pname}</span>
+                  <span class="mono" style="font-weight:600;">${qty} ${t('unit_suffix')}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('') : emptyBlock(t('empty_no_client_purchases'), '')}
     </div>
   `;
 }
@@ -3290,7 +3482,7 @@ function openAddProductSheet(existing){
   }
 }
 
-function openPickClientSheet(){
+function openPickClientSheet(onPick){
   const customers = customerStats();
   openSheet(`
     <div class="sheet-head">
@@ -3313,9 +3505,14 @@ function openPickClientSheet(){
   `);
   document.querySelectorAll('[data-action="pick-client"]').forEach(row=>{
     row.addEventListener('click', ()=>{
-      window._customerDraft = decodeURIComponent(row.dataset.name);
-      closeSheet();
-      render();
+      const name = decodeURIComponent(row.dataset.name);
+      if(onPick){
+        onPick(name);
+      } else {
+        window._customerDraft = name;
+        closeSheet();
+        render();
+      }
     });
   });
 }
@@ -3437,7 +3634,8 @@ function openReturnItemsSheet(saleId){
     await saveData();
     closeSheet();
     render();
-    showToast(`${t('toast_return_done_prefix')} ${fmt(amount)}`);
+    const totalReturnedQty = returnedItems.reduce((sum,i)=>sum+i.qty,0);
+    showToast(`${t('toast_return_done_prefix')} ${fmt(amount)} (${totalReturnedQty} ${t('unit_suffix')})`);
   };
 }
 
@@ -3462,9 +3660,11 @@ function openExpenseSheet(){
     </div>
     <button class="btn-full" id="save-expense">${ICONS.check} ${t('save_btn')}</button>
   `);
-  document.getElementById('save-expense').onclick = async () => {
+  document.getElementById('save-expense').onclick = async (e) => {
+    if(e.target.disabled) return;
     const amount = parseFloat(document.getElementById('ex-amount').value) || 0;
     if(amount<=0){ showToast(t('toast_enter_amount')); return; }
+    e.target.disabled = true;
     const category = document.getElementById('ex-category').value.trim();
     const note = document.getElementById('ex-note').value.trim();
     state.expenses.push({id:uid(), date:nowISO(), amount, category, note});
@@ -3491,9 +3691,11 @@ function openWithdrawalSheet(){
     </div>
     <button class="btn-full" id="save-withdrawal">${ICONS.check} ${t('save_btn')}</button>
   `);
-  document.getElementById('save-withdrawal').onclick = async () => {
+  document.getElementById('save-withdrawal').onclick = async (e) => {
+    if(e.target.disabled) return;
     const amount = parseFloat(document.getElementById('wd-amount').value) || 0;
     if(amount<=0){ showToast(t('toast_enter_amount')); return; }
+    e.target.disabled = true;
     const note = document.getElementById('wd-note').value.trim();
     state.withdrawals.push({id:uid(), date:nowISO(), amount, note});
     await saveData();
@@ -3821,11 +4023,13 @@ function openAddSupplierSheet(existing){
       payInput.addEventListener('input', updatePreview);
     }
     const confirmPayBtn = document.getElementById('confirm-pay-amount');
-    if(confirmPayBtn) confirmPayBtn.onclick = async () => {
+    if(confirmPayBtn) confirmPayBtn.onclick = async (e) => {
+      if(e.target.disabled) return;
       const input = document.getElementById('pay-amount-input');
       const raw = parseFloat(input.value);
       const amount = Number.isFinite(raw) && raw>0 ? Math.min(raw, debt) : 0;
       if(amount<=0){ showToast(t('toast_enter_amount')); return; }
+      e.target.disabled = true;
       await paySupplierDebt(existing.name, amount);
       closeSheet();
       render();
@@ -3891,6 +4095,11 @@ function openAddSupplierSheet(existing){
 async function confirmSale(){
   const cartItems = Object.entries(cart).filter(([,q])=>q>0);
   if(cartItems.length===0) return;
+  const confirmBtnEl = document.getElementById('confirm-sale');
+  if(confirmBtnEl){
+    if(confirmBtnEl.disabled) return;
+    confirmBtnEl.disabled = true;
+  }
   const items = cartItems.map(([pid,q])=>{
     const p = state.products.find(x=>x.id===pid);
     return {productId:pid, name:p.name, price:p.price, qty:q};
@@ -3911,6 +4120,8 @@ async function confirmSale(){
     if(p) p.stock = Math.max(0, p.stock - i.qty);
   });
 
+  const paidNow = payMethod==='debt' ? Math.max(0, Math.min(parseFloat(paidNowValue)||0, total)) : 0;
+
   const sale = {
     id: uid(),
     orderNumber: ++state.orderCounter,
@@ -3922,9 +4133,9 @@ async function confirmSale(){
     discountValue: discountAmount>0 ? discountValue : 0,
     discountAmount,
     total,
-    paidAmount: 0,
+    paidAmount: paidNow,
     payment: payMethod,
-    status: payMethod==='debt' ? 'debt' : 'paid'
+    status: (payMethod==='debt' && paidNow<total) ? 'debt' : 'paid'
   };
   state.sales.push(sale);
 
@@ -3933,6 +4144,7 @@ async function confirmSale(){
   payMethod = 'cash';
   discountType = 'percent';
   discountValue = 0;
+  paidNowValue = '';
   window._customerDraft = '';
   salesSubTab = 'history';
   render();
@@ -3942,7 +4154,7 @@ async function confirmSale(){
 function buildReceiptText(sale, priorDebt){
   const lines = [];
   const client = sale.customer ? state.clients.find(c=>c.name.trim()===sale.customer.trim()) : null;
-  const grandDebtAfter = priorDebt + (sale.status==='debt' ? sale.total : 0);
+  const grandDebtAfter = priorDebt + saleOutstanding(sale);
   lines.push(`${t('invoice_title_prefix')}${sale.orderNumber}`);
   lines.push(state.settings.shopPhone ? `${state.settings.shopName} (${state.settings.shopPhone})` : state.settings.shopName);
   if(sale.customer) lines.push(`${t('buyer_label')} ${sale.customer}`);
@@ -4047,7 +4259,7 @@ function renderInvoiceCanvas(sale, priorDebt){
   const padding = 28;
   const width = 700;
   const client = sale.customer ? state.clients.find(c=>c.name.trim()===sale.customer.trim()) : null;
-  const grandDebtAfter = priorDebt + (sale.status==='debt' ? sale.total : 0);
+  const grandDebtAfter = priorDebt + saleOutstanding(sale);
   const tableLeft = padding, tableRight = width - padding;
   const cols = [
     {key:'num',   label:t('table_header_num'),   x:tableLeft,      w:34,  align:'left'},
@@ -4220,7 +4432,7 @@ function printReceiptPDF(sale, priorDebt=0){
     `).join('');
     const payLabel = sale.payment==='cash' ? t('pay_cash') : sale.payment==='card' ? t('pay_card') : t('pay_debt');
     const client = sale.customer ? state.clients.find(c=>c.name.trim()===sale.customer.trim()) : null;
-    const grandDebtAfter = priorDebt + (sale.status==='debt' ? sale.total : 0);
+    const grandDebtAfter = priorDebt + saleOutstanding(sale);
     const totalQty = sale.items.reduce((s,i)=>s+i.qty,0);
     const html = `
       <div style="font-family:Arial,sans-serif; color:#111; max-width:560px; margin:0 auto; padding:24px;">
@@ -4316,12 +4528,16 @@ function bindEvents(){
   el.querySelectorAll('[data-action="new-sale"]').forEach(b=>b.addEventListener('click', ()=>{
     currentTab='sales'; salesSubTab='new'; render();
   }));
+  el.querySelectorAll('[data-action="edit-sale"]').forEach(row=>{
+    row.addEventListener('click', ()=>openEditSaleSheet(row.dataset.id));
+  });
   el.querySelectorAll('[data-action="add-product"]').forEach(b=>b.addEventListener('click', ()=>openAddProductSheet(null)));
   el.querySelectorAll('[data-action="stock-in"]').forEach(b=>b.addEventListener('click', openStockInSheet));
   el.querySelectorAll('[data-action="open-return"]').forEach(b=>b.addEventListener('click', openReturnPickSheet));
   el.querySelectorAll('[data-action="add-expense"]').forEach(b=>b.addEventListener('click', openExpenseSheet));
   el.querySelectorAll('[data-action="add-withdrawal"]').forEach(b=>b.addEventListener('click', openWithdrawalSheet));
   el.querySelectorAll('[data-kassatab]').forEach(b=>b.addEventListener('click', ()=>{ kassaSubTab=b.dataset.kassatab; render(); }));
+  el.querySelectorAll('[data-reporttab]').forEach(b=>b.addEventListener('click', ()=>{ reportSubTab=b.dataset.reporttab; render(); }));
   el.querySelectorAll('[data-action="add-client"]').forEach(b=>b.addEventListener('click', ()=>openAddClientSheet(null)));
   el.querySelectorAll('[data-action="add-supplier"]').forEach(b=>b.addEventListener('click', ()=>openAddSupplierSheet(null)));
   el.querySelectorAll('[data-clientstab]').forEach(b=>b.addEventListener('click', ()=>{ clientsSubTab=b.dataset.clientstab; clientSearch=''; render(); }));
@@ -4382,11 +4598,36 @@ function bindEvents(){
   }));
 
   const custInput = document.getElementById('customer-name');
+  const custSuggestions = document.getElementById('customer-suggestions');
   if(custInput){
-    custInput.addEventListener('input', e=>{ window._customerDraft = e.target.value; });
+    custInput.addEventListener('input', e=>{
+      window._customerDraft = e.target.value;
+      if(!custSuggestions) return;
+      const q = e.target.value.trim().toLowerCase();
+      if(!q){ custSuggestions.style.display = 'none'; custSuggestions.innerHTML = ''; return; }
+      const names = [...new Set(customerStats().map(c=>c.name))]
+        .filter(n=>n!==t('no_name_client') && n.toLowerCase().includes(q))
+        .slice(0, 6);
+      if(names.length===0){ custSuggestions.style.display = 'none'; custSuggestions.innerHTML = ''; return; }
+      custSuggestions.innerHTML = names.map(n=>`
+        <div class="cust-suggestion" data-name="${n}" style="padding:10px 14px; cursor:pointer; font-size:13.5px; border-bottom:1px solid var(--border);">${n}</div>
+      `).join('');
+      custSuggestions.style.display = 'block';
+      custSuggestions.querySelectorAll('.cust-suggestion').forEach(row=>{
+        row.addEventListener('click', ()=>{
+          custInput.value = row.dataset.name;
+          window._customerDraft = row.dataset.name;
+          custSuggestions.style.display = 'none';
+          custSuggestions.innerHTML = '';
+        });
+      });
+    });
+    custInput.addEventListener('blur', ()=>{
+      setTimeout(()=>{ if(custSuggestions){ custSuggestions.style.display = 'none'; } }, 150);
+    });
   }
   const pickClientBtn = document.getElementById('pick-client-btn');
-  if(pickClientBtn) pickClientBtn.addEventListener('click', openPickClientSheet);
+  if(pickClientBtn) pickClientBtn.addEventListener('click', ()=>openPickClientSheet());
 
   const discountInput = document.getElementById('discount-value');
   if(discountInput){
@@ -4399,6 +4640,13 @@ function bindEvents(){
     discountType = b.dataset.discountType;
     render();
   }));
+  const paidNowInput = document.getElementById('paid-now-input');
+  if(paidNowInput){
+    paidNowInput.addEventListener('input', e=>{
+      paidNowValue = e.target.value;
+      render();
+    });
+  }
 
   const confirmBtn = document.getElementById('confirm-sale');
   if(confirmBtn) confirmBtn.addEventListener('click', confirmSale);
