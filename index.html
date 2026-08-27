@@ -457,6 +457,7 @@ const I18N = {
     cost_inline_prefix:'Келген:', margin_preview_prefix:'Пайда:',
     cost_per_unit_hint:'Баасы бир даана үчүн', total_cost_preview_prefix:'Жалпы келген наркы:',
     supplier_history_title:'Тарых', event_stockin_label:'Товар кабыл алынды', empty_no_supplier_history:'Тарых бош',
+    toggle_payment_hint:'Басып, накталай/карызга алмаштырыңыз', toast_payment_status_changed:'Төлөм статусу өзгөрдү',
     discount_section_title:'Скидка (милдеттүү эмес)', discount_amount_unit:'сом',
     subtotal_label:'Аралык сумма', discount_label:'Скидка',
     supplier_optional_label:'Поставщик (милдеттүү эмес)', no_supplier_option:'— тандалган жок —',
@@ -627,6 +628,7 @@ const I18N = {
     cost_inline_prefix:'Купил:', margin_preview_prefix:'Прибыль:',
     cost_per_unit_hint:'Цена за одну единицу', total_cost_preview_prefix:'Общая закупочная стоимость:',
     supplier_history_title:'История', event_stockin_label:'Товар получен', empty_no_supplier_history:'История пуста',
+    toggle_payment_hint:'Нажмите, чтобы переключить наличные/долг', toast_payment_status_changed:'Статус оплаты изменён',
     discount_section_title:'Скидка (необязательно)', discount_amount_unit:'сом',
     subtotal_label:'Промежуточная сумма', discount_label:'Скидка',
     supplier_optional_label:'Поставщик (необязательно)', no_supplier_option:'— не выбрано —',
@@ -797,6 +799,7 @@ const I18N = {
     cost_inline_prefix:'Cost:', margin_preview_prefix:'Profit:',
     cost_per_unit_hint:'Price per single unit', total_cost_preview_prefix:'Total purchase cost:',
     supplier_history_title:'History', event_stockin_label:'Goods received', empty_no_supplier_history:'History is empty',
+    toggle_payment_hint:'Tap to switch between cash and credit', toast_payment_status_changed:'Payment status changed',
     discount_section_title:'Discount (optional)', discount_amount_unit:'som',
     subtotal_label:'Subtotal', discount_label:'Discount',
     supplier_optional_label:'Supplier (optional)', no_supplier_option:'— none selected —',
@@ -967,6 +970,7 @@ const I18N = {
     cost_inline_prefix:'Кірді:', margin_preview_prefix:'Пайда:',
     cost_per_unit_hint:'Бір дана үшін баға', total_cost_preview_prefix:'Жалпы сатып алу құны:',
     supplier_history_title:'Тарих', event_stockin_label:'Тауар қабылданды', empty_no_supplier_history:'Тарих бос',
+    toggle_payment_hint:'Қолма-қол/қарыз ауыстыру үшін басыңыз', toast_payment_status_changed:'Төлем мәртебесі өзгерді',
     discount_section_title:'Жеңілдік (міндетті емес)', discount_amount_unit:'сом',
     subtotal_label:'Аралық сома', discount_label:'Жеңілдік',
     supplier_optional_label:'Жеткізуші (міндетті емес)', no_supplier_option:'— таңдалмаған —',
@@ -1137,6 +1141,7 @@ const I18N = {
     cost_inline_prefix:'Kirim:', margin_preview_prefix:'Foyda:',
     cost_per_unit_hint:'Bitta dona uchun narx', total_cost_preview_prefix:'Jami xarid qiymati:',
     supplier_history_title:'Tarix', event_stockin_label:'Tovar qabul qilindi', empty_no_supplier_history:"Tarix bo'sh",
+    toggle_payment_hint:"Naqd/qarz almashtirish uchun bosing", toast_payment_status_changed:"To'lov holati o'zgardi",
     discount_section_title:'Chegirma (majburiy emas)', discount_amount_unit:'som',
     subtotal_label:'Oraliq summa', discount_label:'Chegirma',
     supplier_optional_label:'Yetkazib beruvchi (majburiy emas)', no_supplier_option:'— tanlanmagan —',
@@ -1307,6 +1312,7 @@ const I18N = {
     cost_inline_prefix:'Alış:', margin_preview_prefix:'Kâr:',
     cost_per_unit_hint:'Birim başına fiyat', total_cost_preview_prefix:'Toplam alış maliyeti:',
     supplier_history_title:'Geçmiş', event_stockin_label:'Ürün teslim alındı', empty_no_supplier_history:'Geçmiş boş',
+    toggle_payment_hint:'Nakit/veresiye değiştirmek için dokunun', toast_payment_status_changed:'Ödeme durumu değişti',
     discount_section_title:'İndirim (isteğe bağlı)', discount_amount_unit:'som',
     subtotal_label:'Ara toplam', discount_label:'İndirim',
     supplier_optional_label:'Tedarikçi (isteğe bağlı)', no_supplier_option:'— seçilmedi —',
@@ -1381,6 +1387,7 @@ let clientSearch = '';
 let clientsSubTab = 'clients';
 let kassaSubTab = 'debts';
 let reportSubTab = 'products';
+let expandedReportClients = new Set();
 let confirmCashDelete = null;
 let salesSubTab = 'new';
 let payMethod = 'cash';
@@ -1397,13 +1404,7 @@ const intOr = (v, fallback=0) => { const n = parseInt(v,10); return Number.isFin
 
 function seedData(){
   return {
-    products: [
-      {id: uid(), name:'Нан (буханка)', category:'Азык', price:35, stock:48},
-      {id: uid(), name:'Сүт 1л "Ак-Түлөк"', category:'Азык', price:85, stock:6},
-      {id: uid(), name:'Кант 1кг', category:'Азык', price:95, stock:22},
-      {id: uid(), name:'Кока-Кола 0.5л', category:'Суусундук', price:60, stock:0},
-      {id: uid(), name:'Дептер А4', category:'Канц. буюм', price:40, stock:31},
-    ],
+    products: [],
     sales: [],
     clients: [],
     suppliers: [],
@@ -2859,20 +2860,26 @@ function renderClientPurchaseReport(){
       ${clientNames.length ? clientNames.map(name=>{
         const products = byClient[name];
         const totalQty = Object.values(products).reduce((s,q)=>s+q,0);
+        const isOpen = expandedReportClients.has(name);
         return `
-          <div class="row" style="display:block;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
-              <div class="who">${name}</div>
+          <div class="row" data-action="toggle-report-client" data-name="${encodeURIComponent(name)}" style="display:block; cursor:pointer;">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span style="width:14px;height:14px; color:var(--muted-2); display:flex; transform:rotate(${isOpen?90:0}deg); transition:transform 0.15s ease;">${ICONS.chevron}</span>
+                <div class="who">${name}</div>
+              </div>
               <span class="mono" style="font-size:11.5px; font-weight:700; color:var(--primary);">${totalQty} ${t('unit_suffix')}</span>
             </div>
-            <div style="display:flex; flex-direction:column; gap:3px;">
-              ${Object.entries(products).sort((a,b)=>b[1]-a[1]).map(([pname,qty])=>`
-                <div style="display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted);">
-                  <span>${pname}</span>
-                  <span class="mono" style="font-weight:600;">${qty} ${t('unit_suffix')}</span>
-                </div>
-              `).join('')}
-            </div>
+            ${isOpen ? `
+              <div style="display:flex; flex-direction:column; gap:3px; margin-top:8px; padding-left:20px;">
+                ${Object.entries(products).sort((a,b)=>b[1]-a[1]).map(([pname,qty])=>`
+                  <div style="display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted);">
+                    <span>${pname}</span>
+                    <span class="mono" style="font-weight:600;">${qty} ${t('unit_suffix')}</span>
+                  </div>
+                `).join('')}
+              </div>
+            ` : ''}
           </div>
         `;
       }).join('') : emptyBlock(t('empty_no_client_purchases'), '')}
@@ -3921,7 +3928,7 @@ function renderSupplierHistorySection(supplierName, confirmingDeletePurchaseId){
                     <span style="font-weight:400; color:var(--muted); font-size:12px;">${new Date(pu.date).toLocaleDateString('ru-RU')}</span>
                   </div>
                   <div class="meta">${pu.productName} · ${pu.qty} ${t('unit_suffix')}</div>
-                  <span class="badge ${isPaidCash?'paid':'debt'} inline" style="margin-top:4px;">${isPaidCash?ICONS.check:ICONS.debtc} ${isPaidCash?t('paid_cash_label'):t('taken_on_debt_label')}</span>
+                  <button data-action="toggle-purchase-payment" data-id="${pu.id}" class="badge ${isPaidCash?'paid':'debt'} inline" style="margin-top:4px; border:none; cursor:pointer;" title="${t('toggle_payment_hint')}">${isPaidCash?ICONS.check:ICONS.debtc} ${isPaidCash?t('paid_cash_label'):t('taken_on_debt_label')}</button>
                 </div>
               </div>
               <div style="text-align:right;">
@@ -4080,6 +4087,22 @@ function openAddSupplierSheet(existing){
       await saveData();
       refresh();
       showToast(t('toast_purchase_deleted'));
+    }));
+    document.querySelectorAll('[data-action="toggle-purchase-payment"]').forEach(b=>b.addEventListener('click', async ()=>{
+      const pu = state.purchases.find(x=>x.id===b.dataset.id);
+      if(!pu) return;
+      if(pu.status==='debt'){
+        pu.status = 'paid';
+        pu.payment = 'cash';
+        pu.paidAmount = pu.totalCost;
+      } else {
+        pu.status = 'debt';
+        pu.payment = 'debt';
+        pu.paidAmount = 0;
+      }
+      await saveData();
+      refresh();
+      showToast(t('toast_payment_status_changed'));
     }));
   }
 
@@ -4538,6 +4561,12 @@ function bindEvents(){
   el.querySelectorAll('[data-action="add-withdrawal"]').forEach(b=>b.addEventListener('click', openWithdrawalSheet));
   el.querySelectorAll('[data-kassatab]').forEach(b=>b.addEventListener('click', ()=>{ kassaSubTab=b.dataset.kassatab; render(); }));
   el.querySelectorAll('[data-reporttab]').forEach(b=>b.addEventListener('click', ()=>{ reportSubTab=b.dataset.reporttab; render(); }));
+  el.querySelectorAll('[data-action="toggle-report-client"]').forEach(row=>row.addEventListener('click', ()=>{
+    const name = decodeURIComponent(row.dataset.name);
+    if(expandedReportClients.has(name)) expandedReportClients.delete(name);
+    else expandedReportClients.add(name);
+    render();
+  }));
   el.querySelectorAll('[data-action="add-client"]').forEach(b=>b.addEventListener('click', ()=>openAddClientSheet(null)));
   el.querySelectorAll('[data-action="add-supplier"]').forEach(b=>b.addEventListener('click', ()=>openAddSupplierSheet(null)));
   el.querySelectorAll('[data-clientstab]').forEach(b=>b.addEventListener('click', ()=>{ clientsSubTab=b.dataset.clientstab; clientSearch=''; render(); }));
