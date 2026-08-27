@@ -3,7 +3,7 @@
 // offline use is safe: nothing needs a live connection except opening
 // WhatsApp/Telegram links or the Google Fonts used for styling).
 
-const CACHE_NAME = 'esep-cache-v2';
+const CACHE_NAME = 'esep-cache-v3';
 const APP_SHELL = [
   './index.html',
   './manifest.json',
