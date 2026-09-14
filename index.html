@@ -378,6 +378,7 @@ const I18N = {
     debt_prefix:'карыз:', no_extra_info:'Кошумча маалымат жок', we_owe_badge:'Биз карыздабыз',
     total_owed_to_suppliers_title:'Поставщиктерге жалпы карыз', creditor_count_suffix:'поставщик',
     total_purchase_label:'Жалпы сатып алуу', current_debt_label:'Учурдагы карыз', pay_client_debt_btn:'Карызды жабуу',
+    total_paid_label:'Жалпы төлөгөн',
     purchase_history_title:'Сатып алуу тарыхы', empty_no_sales:'Сатуу жок',
     payment_history_title:'Төлөм тарыхы', empty_no_payments:'Төлөм жок али',
     combined_history_title:'Тарых', event_order_label:'Заказ',
@@ -398,11 +399,17 @@ const I18N = {
     toast_payment_recorded:'Төлөм катталды', current_debt_inline_prefix:'Учурдагы карыз:', debt_payment_in_label:'Карыз төлөмү',
     remaining_after_payment_prefix:'Төлөгөндөн кийин калат:',
     paid_now_label:'Азыр канча төлөндү? (милдеттүү эмес)',
+    receipt_paid_amount_label:'Төлөндү:',
     edit_client_info_title:'Клиентти түзөтүү',
     edit_sale_title:'Сатууну түзөтүү', available_suffix:'жеткиликтүү:',
     save_btn:'Сактоо', toast_choose_product:'Товар тандаңыз', toast_sale_updated:'Сатуу жаңыртылды',
     kassa_subtitle:'Накта акча, чыгымдар жана карыздар',
     cash_on_hand_label:'Кассадагы накта', total_debt_label:'Жалпы карыз', debt_count_suffix:'карыздар',
+    cash_breakdown_title:'Толук эсеп', cash_sales_breakdown_label:'Накталай сатуу',
+    card_sales_breakdown_label:'Карта менен сатуу', debt_in_cash_breakdown_label:'Карыз төлөмдөрү (накта)',
+    debt_in_card_breakdown_label:'Карыз төлөмдөрү (карта)', expenses_breakdown_label:'Чыгымдар',
+    withdrawals_breakdown_label:'Алынган каражат', supplier_out_cash_breakdown_label:'Поставщикке төлөнгөн (накта)',
+    supplier_out_card_breakdown_label:'Поставщикке төлөнгөн (карта)',
     expense_btn:'Расход', withdrawal_btn:'Изъятие',
     tab_debts:'Карыздар', tab_cash_history:'Расход/Изъятие',
     empty_no_debts_title:'Карыз жок', empty_no_debts_desc:'Бардык эсептер төлөнгөн 🎉',
@@ -549,6 +556,7 @@ const I18N = {
     debt_prefix:'долг:', no_extra_info:'Нет дополнительной информации', we_owe_badge:'Мы должны',
     total_owed_to_suppliers_title:'Общий долг поставщикам', creditor_count_suffix:'поставщиков',
     total_purchase_label:'Всего покупок', current_debt_label:'Текущий долг', pay_client_debt_btn:'Закрыть долг',
+    total_paid_label:'Всего оплачено',
     purchase_history_title:'История покупок', empty_no_sales:'Продаж нет',
     payment_history_title:'История платежей', empty_no_payments:'Платежей пока нет',
     combined_history_title:'История', event_order_label:'Заказ',
@@ -569,11 +577,17 @@ const I18N = {
     toast_payment_recorded:'Оплата записана', current_debt_inline_prefix:'Текущий долг:', debt_payment_in_label:'Оплата долга',
     remaining_after_payment_prefix:'Останется после оплаты:',
     paid_now_label:'Сколько оплачено сейчас? (необязательно)',
+    receipt_paid_amount_label:'Оплачено:',
     edit_client_info_title:'Редактировать клиента',
     edit_sale_title:'Редактировать продажу', available_suffix:'доступно:',
     save_btn:'Сохранить', toast_choose_product:'Выберите товар', toast_sale_updated:'Продажа обновлена',
     kassa_subtitle:'Наличные, расходы и долги',
     cash_on_hand_label:'Наличные в кассе', total_debt_label:'Общий долг', debt_count_suffix:'должников',
+    cash_breakdown_title:'Полная сводка', cash_sales_breakdown_label:'Продажи наличными',
+    card_sales_breakdown_label:'Продажи картой', debt_in_cash_breakdown_label:'Оплата долгов (наличные)',
+    debt_in_card_breakdown_label:'Оплата долгов (карта)', expenses_breakdown_label:'Расходы',
+    withdrawals_breakdown_label:'Изъятия', supplier_out_cash_breakdown_label:'Оплачено поставщику (наличные)',
+    supplier_out_card_breakdown_label:'Оплачено поставщику (карта)',
     expense_btn:'Расход', withdrawal_btn:'Изъятие',
     tab_debts:'Долги', tab_cash_history:'Расход/Изъятие',
     empty_no_debts_title:'Долгов нет', empty_no_debts_desc:'Все счета оплачены 🎉',
@@ -720,6 +734,7 @@ const I18N = {
     debt_prefix:'debt:', no_extra_info:'No extra info', we_owe_badge:'We owe them',
     total_owed_to_suppliers_title:'Total owed to suppliers', creditor_count_suffix:'suppliers',
     total_purchase_label:'Total purchases', current_debt_label:'Current debt', pay_client_debt_btn:'Close debt',
+    total_paid_label:'Total paid',
     purchase_history_title:'Purchase history', empty_no_sales:'No sales',
     payment_history_title:'Payment history', empty_no_payments:'No payments yet',
     combined_history_title:'History', event_order_label:'Order',
@@ -740,11 +755,17 @@ const I18N = {
     toast_payment_recorded:'Payment recorded', current_debt_inline_prefix:'Current debt:', debt_payment_in_label:'Debt payment',
     remaining_after_payment_prefix:'Will remain after payment:',
     paid_now_label:'How much is paid now? (optional)',
+    receipt_paid_amount_label:'Paid:',
     edit_client_info_title:'Edit client',
     edit_sale_title:'Edit sale', available_suffix:'available:',
     save_btn:'Save', toast_choose_product:'Choose a product', toast_sale_updated:'Sale updated',
     kassa_subtitle:'Cash, expenses, and debts',
     cash_on_hand_label:'Cash on hand', total_debt_label:'Total debt', debt_count_suffix:'debtors',
+    cash_breakdown_title:'Full breakdown', cash_sales_breakdown_label:'Cash sales',
+    card_sales_breakdown_label:'Card sales', debt_in_cash_breakdown_label:'Debt payments (cash)',
+    debt_in_card_breakdown_label:'Debt payments (card)', expenses_breakdown_label:'Expenses',
+    withdrawals_breakdown_label:'Withdrawals', supplier_out_cash_breakdown_label:'Paid to suppliers (cash)',
+    supplier_out_card_breakdown_label:'Paid to suppliers (card)',
     expense_btn:'Expense', withdrawal_btn:'Withdrawal',
     tab_debts:'Debts', tab_cash_history:'Expenses/Withdrawals',
     empty_no_debts_title:'No debts', empty_no_debts_desc:'All bills are paid 🎉',
@@ -891,6 +912,7 @@ const I18N = {
     debt_prefix:'қарыз:', no_extra_info:'Қосымша ақпарат жоқ', we_owe_badge:'Біз оған қарыздармыз',
     total_owed_to_suppliers_title:'Жеткізушілерге жалпы қарыз', creditor_count_suffix:'жеткізуші',
     total_purchase_label:'Жалпы сатып алу', current_debt_label:'Ағымдағы қарыз', pay_client_debt_btn:'Қарызды жабу',
+    total_paid_label:'Барлығы төленді',
     purchase_history_title:'Сатып алу тарихы', empty_no_sales:'Сату жоқ',
     payment_history_title:'Төлем тарихы', empty_no_payments:'Әзірге төлем жоқ',
     combined_history_title:'Тарих', event_order_label:'Тапсырыс',
@@ -911,11 +933,17 @@ const I18N = {
     toast_payment_recorded:'Төлем тіркелді', current_debt_inline_prefix:'Ағымдағы қарыз:', debt_payment_in_label:'Қарыз төлемі',
     remaining_after_payment_prefix:'Төлегеннен кейін қалады:',
     paid_now_label:'Қазір қанша төленді? (міндетті емес)',
+    receipt_paid_amount_label:'Төленді:',
     edit_client_info_title:'Клиентті өзгерту',
     edit_sale_title:'Сатуды өзгерту', available_suffix:'қолжетімді:',
     save_btn:'Сақтау', toast_choose_product:'Тауарды таңдаңыз', toast_sale_updated:'Сату жаңартылды',
     kassa_subtitle:'Қолма-қол ақша, шығындар және қарыздар',
     cash_on_hand_label:'Кассадағы қолма-қол ақша', total_debt_label:'Жалпы қарыз', debt_count_suffix:'қарыздар',
+    cash_breakdown_title:'Толық есеп', cash_sales_breakdown_label:'Қолма-қол сату',
+    card_sales_breakdown_label:'Картамен сату', debt_in_cash_breakdown_label:'Қарыз төлемдері (қолма-қол)',
+    debt_in_card_breakdown_label:'Қарыз төлемдері (карта)', expenses_breakdown_label:'Шығындар',
+    withdrawals_breakdown_label:'Алынған қаражат', supplier_out_cash_breakdown_label:'Жеткізушіге төленді (қолма-қол)',
+    supplier_out_card_breakdown_label:'Жеткізушіге төленді (карта)',
     expense_btn:'Шығын', withdrawal_btn:'Алу',
     tab_debts:'Қарыздар', tab_cash_history:'Шығын/Алу',
     empty_no_debts_title:'Қарыз жоқ', empty_no_debts_desc:'Барлық шоттар төленген 🎉',
@@ -1062,6 +1090,7 @@ const I18N = {
     debt_prefix:'qarz:', no_extra_info:"Qo'shimcha ma'lumot yo'q", we_owe_badge:'Biz unga qarzdormiz',
     total_owed_to_suppliers_title:"Yetkazib beruvchilarga jami qarz", creditor_count_suffix:'yetkazib beruvchi',
     total_purchase_label:'Jami xaridlar', current_debt_label:'Joriy qarz', pay_client_debt_btn:'Qarzni yopish',
+    total_paid_label:"Jami to'landi",
     purchase_history_title:'Xaridlar tarixi', empty_no_sales:"Sotuv yo'q",
     payment_history_title:"To'lovlar tarixi", empty_no_payments:"Hali to'lov yo'q",
     combined_history_title:'Tarix', event_order_label:'Buyurtma',
@@ -1082,11 +1111,17 @@ const I18N = {
     toast_payment_recorded:"To'lov qayd etildi", current_debt_inline_prefix:'Joriy qarz:', debt_payment_in_label:"Qarz to'lovi",
     remaining_after_payment_prefix:"To'lovdan keyin qoladi:",
     paid_now_label:"Hozir qancha to'landi? (majburiy emas)",
+    receipt_paid_amount_label:"To'landi:",
     edit_client_info_title:'Mijozni tahrirlash',
     edit_sale_title:'Sotuvni tahrirlash', available_suffix:'mavjud:',
     save_btn:'Saqlash', toast_choose_product:'Tovarni tanlang', toast_sale_updated:'Sotuv yangilandi',
     kassa_subtitle:'Naqd pul, xarajatlar va qarzlar',
     cash_on_hand_label:'Kassadagi naqd pul', total_debt_label:'Jami qarz', debt_count_suffix:'qarzdorlar',
+    cash_breakdown_title:"To'liq hisobot", cash_sales_breakdown_label:'Naqd sotuv',
+    card_sales_breakdown_label:'Karta bilan sotuv', debt_in_cash_breakdown_label:"Qarz to'lovlari (naqd)",
+    debt_in_card_breakdown_label:"Qarz to'lovlari (karta)", expenses_breakdown_label:'Xarajatlar',
+    withdrawals_breakdown_label:'Olingan mablag\'', supplier_out_cash_breakdown_label:"Yetkazib beruvchiga to'landi (naqd)",
+    supplier_out_card_breakdown_label:"Yetkazib beruvchiga to'landi (karta)",
     expense_btn:'Xarajat', withdrawal_btn:'Olib qo\'yish',
     tab_debts:'Qarzlar', tab_cash_history:'Xarajat/Olib qo\'yish',
     empty_no_debts_title:"Qarz yo'q", empty_no_debts_desc:"Barcha hisoblar to'langan 🎉",
@@ -1233,6 +1268,7 @@ const I18N = {
     debt_prefix:'borç:', no_extra_info:'Ek bilgi yok', we_owe_badge:'Biz borçluyuz',
     total_owed_to_suppliers_title:'Tedarikçilere toplam borç', creditor_count_suffix:'tedarikçi',
     total_purchase_label:'Toplam alışveriş', current_debt_label:'Güncel borç', pay_client_debt_btn:'Borcu kapat',
+    total_paid_label:'Toplam ödenen',
     purchase_history_title:'Alışveriş geçmişi', empty_no_sales:'Satış yok',
     payment_history_title:'Ödeme geçmişi', empty_no_payments:'Henüz ödeme yok',
     combined_history_title:'Geçmiş', event_order_label:'Sipariş',
@@ -1253,11 +1289,17 @@ const I18N = {
     toast_payment_recorded:'Ödeme kaydedildi', current_debt_inline_prefix:'Güncel borç:', debt_payment_in_label:'Borç ödemesi',
     remaining_after_payment_prefix:'Ödeme sonrası kalan:',
     paid_now_label:'Şimdi ne kadar ödendi? (isteğe bağlı)',
+    receipt_paid_amount_label:'Ödenen:',
     edit_client_info_title:'Müşteriyi düzenle',
     edit_sale_title:'Satışı düzenle', available_suffix:'mevcut:',
     save_btn:'Kaydet', toast_choose_product:'Ürün seçin', toast_sale_updated:'Satış güncellendi',
     kassa_subtitle:'Nakit, giderler ve borçlar',
     cash_on_hand_label:'Kasadaki nakit', total_debt_label:'Toplam borç', debt_count_suffix:'borçlu',
+    cash_breakdown_title:'Tam döküm', cash_sales_breakdown_label:'Nakit satışlar',
+    card_sales_breakdown_label:'Kart ile satışlar', debt_in_cash_breakdown_label:'Borç ödemeleri (nakit)',
+    debt_in_card_breakdown_label:'Borç ödemeleri (kart)', expenses_breakdown_label:'Giderler',
+    withdrawals_breakdown_label:'Para çekmeler', supplier_out_cash_breakdown_label:'Tedarikçiye ödenen (nakit)',
+    supplier_out_card_breakdown_label:'Tedarikçiye ödenen (kart)',
     expense_btn:'Gider', withdrawal_btn:'Para çekme',
     tab_debts:'Borçlar', tab_cash_history:'Gider/Para çekme',
     empty_no_debts_title:'Borç yok', empty_no_debts_desc:'Tüm hesaplar ödendi 🎉',
@@ -1394,6 +1436,7 @@ let payMethod = 'cash';
 let discountType = 'percent';
 let discountValue = 0;
 let paidNowValue = '';
+let paidNowMethod = 'cash';
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
 const fmt = n => Math.round(n||0).toLocaleString('ru-RU') + ' сом';
@@ -1498,7 +1541,7 @@ function purchaseOutstanding(p){
 /* Applies a payment against a customer's outstanding debt sales, oldest first.
    Partial payments reduce paidAmount on individual sales; a sale flips to
    'paid' only once fully covered. Returns the amount actually applied. */
-async function payCustomerDebt(customerName, amount){
+async function payCustomerDebt(customerName, amount, method='cash'){
   const key = customerName.trim();
   let remaining = Math.max(0, amount);
   const debtSales = state.sales
@@ -1517,7 +1560,7 @@ async function payCustomerDebt(customerName, amount){
     applied += pay;
     breakdown.push({saleId: s.id, amount: pay});
   }
-  if(applied>0) state.debtPayments.push({id:uid(), date:nowISO(), customer:key, amount:applied, breakdown});
+  if(applied>0) state.debtPayments.push({id:uid(), date:nowISO(), customer:key, amount:applied, method, breakdown});
   await saveData();
   return applied;
 }
@@ -1596,7 +1639,7 @@ function removePurchaseFromSupplierPayments(purchaseId){
 }
 
 /* Same idea, for what the shop owes a supplier. */
-async function paySupplierDebt(supplierName, amount){
+async function paySupplierDebt(supplierName, amount, method='cash'){
   let remaining = Math.max(0, amount);
   const debtPurchases = state.purchases
     .filter(p=>p.supplier===supplierName && p.status==='debt')
@@ -1614,7 +1657,7 @@ async function paySupplierDebt(supplierName, amount){
     applied += pay;
     breakdown.push({purchaseId: p.id, amount: pay});
   }
-  if(applied>0) state.supplierPayments.push({id:uid(), date:nowISO(), supplier:supplierName, amount:applied, breakdown});
+  if(applied>0) state.supplierPayments.push({id:uid(), date:nowISO(), supplier:supplierName, amount:applied, method, breakdown});
   await saveData();
   return applied;
 }
@@ -2012,7 +2055,13 @@ function renderNewSale(){
         const paidNowNum = Math.max(0, Math.min(parseFloat(paidNowValue)||0, total));
         if(paidNowNum<=0) return '';
         const remaining = Math.max(0, total - paidNowNum);
-        return `<div id="paid-now-preview" class="mono" style="font-size:12.5px; font-weight:600; color:${remaining>0?'var(--debt)':'var(--primary)'}; margin:-6px 0 10px;">${t('remaining_after_payment_prefix')} ${fmt(remaining)}</div>`;
+        return `
+          <div class="field" style="margin-bottom:6px;">
+            <div class="pay-option ${paidNowMethod==='cash'?'active':''}" data-paidnowmethod="cash">${ICONS.cash}<span class="t">${t('pay_cash')}</span></div>
+            <div class="pay-option ${paidNowMethod==='card'?'active':''}" data-paidnowmethod="card">${ICONS.card}<span class="t">${t('pay_card')}</span></div>
+          </div>
+          <div id="paid-now-preview" class="mono" style="font-size:12.5px; font-weight:600; color:${remaining>0?'var(--debt)':'var(--primary)'}; margin:-6px 0 10px;">${t('remaining_after_payment_prefix')} ${fmt(remaining)}</div>
+        `;
       })()}
     ` : ''}
 
@@ -2196,6 +2245,7 @@ function openClientSheet(key){
   const sortedSales = [...c.sales].sort((a,b)=>b.date.localeCompare(a.date));
   let confirmingDeleteId = null;
   let showPayForm = false;
+  let debtPayMethod = 'cash';
   let editingPaymentId = null;
   let confirmingDeletePaymentId = null;
   let confirmingDeleteReturnId = null;
@@ -2219,11 +2269,20 @@ function openClientSheet(key){
           <div class="value mono">${fmt(c.debt)}</div>
         </div>
       </div>
+      <div class="stat" style="margin-bottom:16px;">
+        <div class="label">${t('total_paid_label')}</div>
+        <div class="value mono" style="color:var(--primary);">${fmt(Math.max(0, c.total - c.debt))}</div>
+      </div>
       ${c.debt>0 ? (showPayForm ? `
         <div class="card" style="margin-bottom:16px; border-color:var(--primary-soft);">
           <div class="field" style="margin-bottom:6px;">
             <label>${t('pay_debt_amount_label')}</label>
             <input id="pay-amount-input" type="text" inputmode="numeric" placeholder="${Math.round(c.debt)}">
+          </div>
+          <div class="field" style="margin-bottom:10px;">
+            <label>${t('payment_section_title')}</label>
+            <div class="pay-option ${debtPayMethod==='cash'?'active':''}" data-debtpaymethod="cash">${ICONS.cash}<span class="t">${t('pay_cash')}</span></div>
+            <div class="pay-option ${debtPayMethod==='card'?'active':''}" data-debtpaymethod="card">${ICONS.card}<span class="t">${t('pay_card')}</span></div>
           </div>
           <div id="remaining-preview" class="mono" style="font-size:12.5px; font-weight:600; color:var(--muted); margin-bottom:10px;"></div>
           <div style="display:flex; gap:8px;">
@@ -2283,7 +2342,7 @@ function openClientSheet(key){
                     <div style="display:flex; align-items:center; justify-content:space-between;">
                       <div>
                         <div class="who">${new Date(p.date).toLocaleDateString('ru-RU')}</div>
-                        <div class="meta">${t('debt_payment_in_label')}</div>
+                        <div class="meta">${t('debt_payment_in_label')} · ${p.method==='card'?t('pay_card'):t('pay_cash')}</div>
                       </div>
                       <div style="text-align:right;">
                         <div class="amt" style="color:var(--primary);">+${fmt(p.amount)}</div>
@@ -2380,6 +2439,10 @@ function openClientSheet(key){
       };
       payInput.addEventListener('input', updatePreview);
     }
+    document.querySelectorAll('[data-debtpaymethod]').forEach(b=>b.addEventListener('click', ()=>{
+      debtPayMethod = b.dataset.debtpaymethod;
+      document.querySelectorAll('[data-debtpaymethod]').forEach(x=>x.classList.toggle('active', x.dataset.debtpaymethod===debtPayMethod));
+    }));
     const confirmPayBtn = document.getElementById('confirm-pay-amount');
     if(confirmPayBtn) confirmPayBtn.onclick = async (e) => {
       if(e.target.disabled) return;
@@ -2388,7 +2451,7 @@ function openClientSheet(key){
       const amount = Number.isFinite(raw) && raw>0 ? Math.min(raw, c.debt) : 0;
       if(amount<=0){ showToast(t('toast_enter_amount')); return; }
       e.target.disabled = true;
-      await payCustomerDebt(c.name, amount);
+      await payCustomerDebt(c.name, amount, debtPayMethod);
       closeSheet();
       render();
       showToast(t('toast_payment_recorded'));
@@ -2509,6 +2572,7 @@ function openEditSaleSheet(saleId){
   let editPayment = s.payment==='debt' || s.payment==='card' || s.payment==='cash' ? s.payment : 'cash';
   let editCustomerDraft = s.customer || '';
   let editPaidNowValue = s.payment==='debt' ? String(s.paidAmount||0) : '';
+  let editPaidNowMethod = s.paidMethod || 'cash';
   const originalQtyOf = (pid) => (s.items.find(i=>i.productId===pid)?.qty) || 0;
   const availableOf = (p) => p.stock + originalQtyOf(p.id);
 
@@ -2559,6 +2623,10 @@ function openEditSaleSheet(saleId){
         <div class="field" style="margin-top:10px;">
           <label>${t('paid_now_label')}</label>
           <input id="edit-paid-now-input" type="text" inputmode="numeric" placeholder="0" value="${editPaidNowValue}">
+        </div>
+        <div class="field" style="margin-bottom:6px;">
+          <div class="pay-option ${editPaidNowMethod==='cash'?'active':''}" data-editpaidnowmethod="cash">${ICONS.cash}<span class="t">${t('pay_cash')}</span></div>
+          <div class="pay-option ${editPaidNowMethod==='card'?'active':''}" data-editpaidnowmethod="card">${ICONS.card}<span class="t">${t('pay_card')}</span></div>
         </div>
         <div id="edit-paid-now-preview" class="mono" style="font-size:12.5px; font-weight:600; color:var(--muted); margin:-6px 0 10px;"></div>
       ` : ''}
@@ -2612,6 +2680,10 @@ function openEditSaleSheet(saleId){
       });
       updateEditPaidPreview();
     }
+    document.querySelectorAll('[data-editpaidnowmethod]').forEach(b=>b.addEventListener('click', ()=>{
+      editPaidNowMethod = b.dataset.editpaidnowmethod;
+      refresh();
+    }));
     const editCustInput = document.getElementById('edit-customer');
     const editCustSuggestions = document.getElementById('edit-customer-suggestions');
     if(editCustInput){
@@ -2671,6 +2743,7 @@ function openEditSaleSheet(saleId){
       if(editPayment==='debt'){
         const paidNow = Math.max(0, Math.min(parseFloat(editPaidNowValue)||0, s.total));
         s.paidAmount = paidNow;
+        s.paidMethod = editPaidNowMethod;
         s.status = paidNow < s.total ? 'debt' : 'paid';
       } else {
         s.paidAmount = 0;
@@ -2696,12 +2769,35 @@ function openEditSaleSheet(saleId){
 /* ---------------- Debts ---------------- */
 function cashStats(){
   const cashSales = state.sales.reduce((s,x)=> x.payment==='cash' ? s+x.total : s, 0);
+  const cardSales = state.sales.reduce((s,x)=> x.payment==='card' ? s+x.total : s, 0);
+  /* A debt sale's paidAmount can grow two ways: a direct upfront/edited amount
+     (tagged with paidMethod) and later top-up payments recorded separately in
+     debtPayments (each tagged with its own method). To avoid double-counting
+     the same money twice, only the portion of paidAmount NOT already present
+     in some debtPayments breakdown is treated as the "upfront" contribution. */
+  const breakdownSumForSale = (saleId) => state.debtPayments.reduce((sum,dp)=>{
+    const entry = (dp.breakdown||[]).find(b=>b.saleId===saleId);
+    return sum + (entry ? entry.amount : 0);
+  }, 0);
+  const nonFifoPaidAmount = (x) => Math.max(0, (x.paidAmount||0) - breakdownSumForSale(x.id));
+  const debtSalesUpfrontCash = state.sales.reduce((s,x)=> (x.payment==='debt' && (x.paidMethod||'cash')==='cash') ? s+nonFifoPaidAmount(x) : s, 0);
+  const debtSalesUpfrontCard = state.sales.reduce((s,x)=> (x.payment==='debt' && x.paidMethod==='card') ? s+nonFifoPaidAmount(x) : s, 0);
   const totalExpenses = state.expenses.reduce((s,x)=>s+x.amount,0);
   const totalWithdrawals = state.withdrawals.reduce((s,x)=>s+x.amount,0);
-  const debtPaymentsIn = state.debtPayments.reduce((s,x)=>s+x.amount,0);
-  const supplierPaymentsOut = state.supplierPayments.reduce((s,x)=>s+x.amount,0);
+  const debtPaymentsInCash = state.debtPayments.reduce((s,x)=> (x.method||'cash')==='cash' ? s+x.amount : s, 0);
+  const debtPaymentsInCard = state.debtPayments.reduce((s,x)=> x.method==='card' ? s+x.amount : s, 0);
+  const supplierPaymentsOutCash = state.supplierPayments.reduce((s,x)=> (x.method||'cash')==='cash' ? s+x.amount : s, 0);
+  const supplierPaymentsOutCard = state.supplierPayments.reduce((s,x)=> x.method==='card' ? s+x.amount : s, 0);
+  const debtPaymentsIn = debtPaymentsInCash + debtSalesUpfrontCash;
+  const supplierPaymentsOut = supplierPaymentsOutCash;
   const onHand = cashSales + debtPaymentsIn - totalExpenses - totalWithdrawals - supplierPaymentsOut;
-  return {cashSales, totalExpenses, totalWithdrawals, debtPaymentsIn, supplierPaymentsOut, onHand};
+  return {
+    cashSales, cardSales, totalExpenses, totalWithdrawals,
+    debtPaymentsIn, debtPaymentsInCash, debtPaymentsInCard,
+    debtSalesUpfrontCash, debtSalesUpfrontCard,
+    supplierPaymentsOut, supplierPaymentsOutCash, supplierPaymentsOutCard,
+    onHand
+  };
 }
 
 function renderDebts(){
@@ -2723,6 +2819,38 @@ function renderDebts(){
         <div class="value mono">${fmt(debtTotal)}</div>
         <div class="foot">${debtors.length} ${t('debt_count_suffix')}</div>
       </div>
+    </div>
+
+    <div class="card" style="margin-bottom:14px;">
+      <div class="who" style="margin-bottom:8px;">${t('cash_breakdown_title')}</div>
+      ${(() => {
+        const rows = [
+          [t('cash_sales_breakdown_label'), cs.cashSales, '+'],
+          [t('debt_in_cash_breakdown_label'), cs.debtPaymentsInCash, '+'],
+          [t('expenses_breakdown_label'), cs.totalExpenses, '−'],
+          [t('withdrawals_breakdown_label'), cs.totalWithdrawals, '−'],
+          [t('supplier_out_cash_breakdown_label'), cs.supplierPaymentsOutCash, '−'],
+        ];
+        const cardRows = [
+          [t('card_sales_breakdown_label'), cs.cardSales],
+          [t('debt_in_card_breakdown_label'), cs.debtPaymentsInCard],
+          [t('supplier_out_card_breakdown_label'), cs.supplierPaymentsOutCard],
+        ].filter(r=>r[1]>0);
+        return rows.map(([label,val,sign])=>`
+          <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:4px 0; color:${sign==='+'?'var(--primary)':'var(--debt)'};">
+            <span>${label}</span>
+            <span class="mono" style="font-weight:600;">${sign}${fmt(val)}</span>
+          </div>
+        `).join('') + (cardRows.length ? `
+          <div style="border-top:1px solid var(--border); margin:6px 0;"></div>
+          ${cardRows.map(([label,val])=>`
+            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:4px 0; color:var(--muted);">
+              <span>${label}</span>
+              <span class="mono" style="font-weight:600;">${fmt(val)}</span>
+            </div>
+          `).join('')}
+        ` : '');
+      })()}
     </div>
 
     <div class="quick-actions">
@@ -2900,8 +3028,8 @@ function renderCashHistory(){
     let label;
     if(it.kind==='expense') label = it.category||t('expense_default_label');
     else if(it.kind==='withdrawal') label = t('withdrawal_label');
-    else if(it.kind==='debtIn') label = `${t('debt_payment_in_label')}${it.customer ? ' · '+it.customer : ''}`;
-    else label = `${t('supplier_payment_label')}${it.supplier ? ' · '+it.supplier : ''}`;
+    else if(it.kind==='debtIn') label = `${t('debt_payment_in_label')}${it.customer ? ' · '+it.customer : ''} · ${it.method==='card'?t('pay_card'):t('pay_cash')}`;
+    else label = `${t('supplier_payment_label')}${it.supplier ? ' · '+it.supplier : ''} · ${it.method==='card'?t('pay_card'):t('pay_cash')}`;
     const isConfirming = confirmCashDelete && confirmCashDelete.kind===it.kind && confirmCashDelete.id===it.id;
     return `
     <div class="row" style="display:block;">
@@ -3908,7 +4036,7 @@ function renderSupplierHistorySection(supplierName, confirmingDeletePurchaseId){
                 ${posBadge(ev.position)}
                 <div>
                   <div class="who">${new Date(p.date).toLocaleDateString('ru-RU')}</div>
-                  <div class="meta">${t('event_supplier_payment_label')}</div>
+                  <div class="meta">${t('event_supplier_payment_label')} · ${p.method==='card'?t('pay_card'):t('pay_cash')}</div>
                 </div>
               </div>
               <div class="amt" style="color:var(--primary);">−${fmt(p.amount)}</div>
@@ -3956,6 +4084,7 @@ function renderSupplierHistorySection(supplierName, confirmingDeletePurchaseId){
 function openAddSupplierSheet(existing){
   const s = existing || {name:'', phone:'', note:''};
   let showPayForm = false;
+  let debtPayMethod = 'cash';
   let confirmingDeletePurchaseId = null;
 
   function bodyHtml(){
@@ -3991,6 +4120,11 @@ function openAddSupplierSheet(existing){
             <div class="field" style="margin-bottom:6px;">
               <label>${t('pay_debt_amount_label')}</label>
               <input id="pay-amount-input" type="text" inputmode="numeric" placeholder="${Math.round(debt)}">
+            </div>
+            <div class="field" style="margin-bottom:10px;">
+              <label>${t('payment_section_title')}</label>
+              <div class="pay-option ${debtPayMethod==='cash'?'active':''}" data-debtpaymethod="cash">${ICONS.cash}<span class="t">${t('pay_cash')}</span></div>
+              <div class="pay-option ${debtPayMethod==='card'?'active':''}" data-debtpaymethod="card">${ICONS.card}<span class="t">${t('pay_card')}</span></div>
             </div>
             <div id="remaining-preview" class="mono" style="font-size:12.5px; font-weight:600; color:var(--muted); margin-bottom:10px;"></div>
             <div style="display:flex; gap:8px;">
@@ -4029,6 +4163,10 @@ function openAddSupplierSheet(existing){
       };
       payInput.addEventListener('input', updatePreview);
     }
+    document.querySelectorAll('[data-debtpaymethod]').forEach(b=>b.addEventListener('click', ()=>{
+      debtPayMethod = b.dataset.debtpaymethod;
+      document.querySelectorAll('[data-debtpaymethod]').forEach(x=>x.classList.toggle('active', x.dataset.debtpaymethod===debtPayMethod));
+    }));
     const confirmPayBtn = document.getElementById('confirm-pay-amount');
     if(confirmPayBtn) confirmPayBtn.onclick = async (e) => {
       if(e.target.disabled) return;
@@ -4037,7 +4175,7 @@ function openAddSupplierSheet(existing){
       const amount = Number.isFinite(raw) && raw>0 ? Math.min(raw, debt) : 0;
       if(amount<=0){ showToast(t('toast_enter_amount')); return; }
       e.target.disabled = true;
-      await paySupplierDebt(existing.name, amount);
+      await paySupplierDebt(existing.name, amount, debtPayMethod);
       closeSheet();
       render();
       showToast(t('toast_payment_recorded'));
@@ -4157,6 +4295,7 @@ async function confirmSale(){
     discountAmount,
     total,
     paidAmount: paidNow,
+    paidMethod: paidNowMethod,
     payment: payMethod,
     status: (payMethod==='debt' && paidNow<total) ? 'debt' : 'paid'
   };
@@ -4168,6 +4307,7 @@ async function confirmSale(){
   discountType = 'percent';
   discountValue = 0;
   paidNowValue = '';
+  paidNowMethod = 'cash';
   window._customerDraft = '';
   salesSubTab = 'history';
   render();
@@ -4183,6 +4323,7 @@ function buildReceiptText(sale, priorDebt){
   if(sale.customer) lines.push(`${t('buyer_label')} ${sale.customer}`);
   if(client && client.phone) lines.push(`${t('phone_number_label')} ${client.phone}`);
   lines.push(`${t('comment_label')} ${grandDebtAfter>0 ? t('comment_debt_label')+' '+fmt(grandDebtAfter) : t('comment_paid_label')}`);
+  if(sale.status==='debt' && sale.paidAmount>0) lines.push(`${t('receipt_paid_amount_label')} ${fmt(sale.paidAmount)}`);
   lines.push(`${t('order_number_label')} №${sale.orderNumber} ${t('order_date_join')} ${new Date(sale.date).toLocaleDateString('ru-RU')}`);
   lines.push('');
   sale.items.forEach((i,idx)=>{
@@ -4301,6 +4442,7 @@ function renderInvoiceCanvas(sale, priorDebt){
   if(sale.customer) headerLines.push({text:`${t('buyer_label')} ${sale.customer}`, size:13});
   if(client && client.phone) headerLines.push({text:`${t('phone_number_label')} ${client.phone}`, size:13});
   headerLines.push({text:`${t('comment_label')} ${grandDebtAfter>0 ? t('comment_debt_label')+' '+fmt(grandDebtAfter) : t('comment_paid_label')}`, size:13, color: grandDebtAfter>0 ? '#AE3B26' : '#14532D'});
+  if(sale.status==='debt' && sale.paidAmount>0) headerLines.push({text:`${t('receipt_paid_amount_label')} ${fmt(sale.paidAmount)}`, size:13, color:'#14532D'});
   headerLines.push({text:`${t('order_number_label')} №${sale.orderNumber} ${t('order_date_join')} ${new Date(sale.date).toLocaleDateString('ru-RU')}`, size:13});
 
   const rowHeight = 26;
@@ -4464,6 +4606,7 @@ function printReceiptPDF(sale, priorDebt=0){
         ${sale.customer ? `<div style="font-size:13px; margin-bottom:4px;">${t('buyer_label')} ${sale.customer}</div>` : ''}
         ${client && client.phone ? `<div style="font-size:13px; margin-bottom:4px;">${t('phone_number_label')} ${client.phone}</div>` : ''}
         <div style="font-size:13px; margin-bottom:4px; color:${grandDebtAfter>0?'#AE3B26':'#14532D'};">${t('comment_label')} ${grandDebtAfter>0 ? t('comment_debt_label')+' '+fmt(grandDebtAfter) : t('comment_paid_label')}</div>
+        ${sale.status==='debt' && sale.paidAmount>0 ? `<div style="font-size:13px; margin-bottom:4px; color:#14532D;">${t('receipt_paid_amount_label')} ${fmt(sale.paidAmount)}</div>` : ''}
         <div style="font-size:13px; margin-bottom:14px;">${t('order_number_label')} №${sale.orderNumber} ${t('order_date_join')} ${new Date(sale.date).toLocaleDateString('ru-RU')}</div>
         <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:4px;">
           <thead>
@@ -4676,6 +4819,10 @@ function bindEvents(){
       render();
     });
   }
+  document.querySelectorAll('[data-paidnowmethod]').forEach(b=>b.addEventListener('click', ()=>{
+    paidNowMethod = b.dataset.paidnowmethod;
+    render();
+  }));
 
   const confirmBtn = document.getElementById('confirm-sale');
   if(confirmBtn) confirmBtn.addEventListener('click', confirmSale);
