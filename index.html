@@ -361,6 +361,13 @@ const I18N = {
     out_of_stock:'Түгөндү', low_stock_suffix:'даана — аз калды',
     sales_subtitle:'Жаңы чек түзүү же тарыхты көрүү',
     tab_new_sale:'Жаңы сатуу', tab_history:'Тарых', return_btn:'Возврат', return_btn_title:'Возврат кабыл алуу',
+    tab_orders:'Заказдар', take_order_btn:'Заказ алуу', save_order_btn:'Заказды сактоо',
+    order_note_label:'Эскертүү (милдеттүү эмес)', empty_no_orders_title:'Заказ жок',
+    empty_no_orders_desc:'"Заказ алуу" баскычы менен кошуңуз', fulfill_order_btn:'Жеткирүү',
+    cancel_order_btn:'Жокко чыгаруу', toast_order_saved:'Заказ катталды', toast_order_cancelled:'Заказ жокко чыгарылды',
+    order_history_title:'Заказдар тарыхы', order_status_fulfilled:'Жеткирилди', order_status_cancelled:'Жокко чыгарылды',
+    edit_order_title:'Заказды түзөтүү',
+    confirm_cancel_order:'Бул заказды жокко чыгарасызбы?', order_taken_label:'Заказ алынды',
     choose_products_title:'Товарды тандаңыз', stock_prefix:'калды:', add_btn:'Кошуу',
     empty_no_products_title:'Товар жок', empty_no_products_desc:'Алгач "Товарлар" бөлүмүнөн товар кошуңуз',
     customer_section_title:'Кардар (милдеттүү эмес)', customer_ph:'Кардардын аты', pick_btn:'Тандоо',
@@ -369,6 +376,7 @@ const I18N = {
     empty_no_history_title:'Сатуу тарыхы бош', empty_no_history_desc:'Жаңы сатуу кошкондо бул жерде көрүнөт',
     no_name_client:'Аты жазылган эмес',
     clients_subtitle:'Кардарлар жана поставщиктер',
+    total_clients_count_label:(n)=>`Жалпы кардарлар: ${n}`,
     add_client_btn:'Клиент кошуу', add_supplier_btn:'Поставщик кошуу',
     tab_clients:'Клиенттер', tab_suppliers:'Поставщиктер',
     search_client_ph:'Клиент издөө...', search_supplier_ph:'Поставщик издөө...',
@@ -410,6 +418,8 @@ const I18N = {
     debt_in_card_breakdown_label:'Карыз төлөмдөрү (карта)', expenses_breakdown_label:'Чыгымдар',
     withdrawals_breakdown_label:'Алынган каражат', supplier_out_cash_breakdown_label:'Поставщикке төлөнгөн (накта)',
     supplier_out_card_breakdown_label:'Поставщикке төлөнгөн (карта)',
+    debt_upfront_cash_breakdown_label:'Азыр төлөндү, жаңы заказдар (накта)',
+    debt_upfront_card_breakdown_label:'Азыр төлөндү, жаңы заказдар (карта)',
     expense_btn:'Расход', withdrawal_btn:'Изъятие',
     tab_debts:'Карыздар', tab_cash_history:'Расход/Изъятие',
     empty_no_debts_title:'Карыз жок', empty_no_debts_desc:'Бардык эсептер төлөнгөн 🎉',
@@ -539,6 +549,13 @@ const I18N = {
     out_of_stock:'Закончился', low_stock_suffix:'шт — заканчивается',
     sales_subtitle:'Оформить продажу или посмотреть историю',
     tab_new_sale:'Новая продажа', tab_history:'История', return_btn:'Возврат', return_btn_title:'Принять возврат',
+    tab_orders:'Заказы', take_order_btn:'Принять заказ', save_order_btn:'Сохранить заказ',
+    order_note_label:'Примечание (необязательно)', empty_no_orders_title:'Нет заказов',
+    empty_no_orders_desc:'Добавьте через кнопку "Принять заказ"', fulfill_order_btn:'Доставить',
+    cancel_order_btn:'Отменить', toast_order_saved:'Заказ сохранён', toast_order_cancelled:'Заказ отменён',
+    order_history_title:'История заказов', order_status_fulfilled:'Доставлен', order_status_cancelled:'Отменён',
+    edit_order_title:'Изменить заказ',
+    confirm_cancel_order:'Отменить этот заказ?', order_taken_label:'Заказ принят',
     choose_products_title:'Выберите товары', stock_prefix:'осталось:', add_btn:'Добавить',
     empty_no_products_title:'Нет товаров', empty_no_products_desc:'Сначала добавьте товар в разделе "Товары"',
     customer_section_title:'Клиент (необязательно)', customer_ph:'Имя клиента', pick_btn:'Выбрать',
@@ -547,6 +564,7 @@ const I18N = {
     empty_no_history_title:'История продаж пуста', empty_no_history_desc:'Здесь появятся новые продажи',
     no_name_client:'Имя не указано',
     clients_subtitle:'Клиенты и поставщики',
+    total_clients_count_label:(n)=>`Всего клиентов: ${n}`,
     add_client_btn:'Добавить клиента', add_supplier_btn:'Добавить поставщика',
     tab_clients:'Клиенты', tab_suppliers:'Поставщики',
     search_client_ph:'Поиск клиента...', search_supplier_ph:'Поиск поставщика...',
@@ -588,6 +606,8 @@ const I18N = {
     debt_in_card_breakdown_label:'Оплата долгов (карта)', expenses_breakdown_label:'Расходы',
     withdrawals_breakdown_label:'Изъятия', supplier_out_cash_breakdown_label:'Оплачено поставщику (наличные)',
     supplier_out_card_breakdown_label:'Оплачено поставщику (карта)',
+    debt_upfront_cash_breakdown_label:'Оплачено сразу, новые заказы (наличные)',
+    debt_upfront_card_breakdown_label:'Оплачено сразу, новые заказы (карта)',
     expense_btn:'Расход', withdrawal_btn:'Изъятие',
     tab_debts:'Долги', tab_cash_history:'Расход/Изъятие',
     empty_no_debts_title:'Долгов нет', empty_no_debts_desc:'Все счета оплачены 🎉',
@@ -717,6 +737,13 @@ const I18N = {
     out_of_stock:'Out of stock', low_stock_suffix:'pcs — running low',
     sales_subtitle:'Make a new sale or view history',
     tab_new_sale:'New sale', tab_history:'History', return_btn:'Return', return_btn_title:'Accept return',
+    tab_orders:'Orders', take_order_btn:'Take order', save_order_btn:'Save order',
+    order_note_label:'Note (optional)', empty_no_orders_title:'No orders',
+    empty_no_orders_desc:'Add one with the "Take order" button', fulfill_order_btn:'Deliver',
+    cancel_order_btn:'Cancel', toast_order_saved:'Order saved', toast_order_cancelled:'Order cancelled',
+    order_history_title:'Order history', order_status_fulfilled:'Delivered', order_status_cancelled:'Cancelled',
+    edit_order_title:'Edit order',
+    confirm_cancel_order:'Cancel this order?', order_taken_label:'Order taken',
     choose_products_title:'Choose products', stock_prefix:'in stock:', add_btn:'Add',
     empty_no_products_title:'No products', empty_no_products_desc:'First add a product in the Products section',
     customer_section_title:'Customer (optional)', customer_ph:"Customer's name", pick_btn:'Choose',
@@ -725,6 +752,7 @@ const I18N = {
     empty_no_history_title:'No sales history yet', empty_no_history_desc:'New sales will show up here',
     no_name_client:'Name not given',
     clients_subtitle:'Customers and suppliers',
+    total_clients_count_label:(n)=>`Total customers: ${n}`,
     add_client_btn:'Add client', add_supplier_btn:'Add supplier',
     tab_clients:'Clients', tab_suppliers:'Suppliers',
     search_client_ph:'Search clients...', search_supplier_ph:'Search suppliers...',
@@ -766,6 +794,8 @@ const I18N = {
     debt_in_card_breakdown_label:'Debt payments (card)', expenses_breakdown_label:'Expenses',
     withdrawals_breakdown_label:'Withdrawals', supplier_out_cash_breakdown_label:'Paid to suppliers (cash)',
     supplier_out_card_breakdown_label:'Paid to suppliers (card)',
+    debt_upfront_cash_breakdown_label:'Paid upfront, new orders (cash)',
+    debt_upfront_card_breakdown_label:'Paid upfront, new orders (card)',
     expense_btn:'Expense', withdrawal_btn:'Withdrawal',
     tab_debts:'Debts', tab_cash_history:'Expenses/Withdrawals',
     empty_no_debts_title:'No debts', empty_no_debts_desc:'All bills are paid 🎉',
@@ -895,6 +925,13 @@ const I18N = {
     out_of_stock:'Таусылды', low_stock_suffix:'дана — азайып барады',
     sales_subtitle:'Жаңа сату жасаңыз немесе тарихты қараңыз',
     tab_new_sale:'Жаңа сату', tab_history:'Тарих', return_btn:'Қайтару', return_btn_title:'Қайтаруды қабылдау',
+    tab_orders:'Тапсырыстар', take_order_btn:'Тапсырыс қабылдау', save_order_btn:'Тапсырысты сақтау',
+    order_note_label:'Ескертпе (міндетті емес)', empty_no_orders_title:'Тапсырыс жоқ',
+    empty_no_orders_desc:'"Тапсырыс қабылдау" батырмасы арқылы қосыңыз', fulfill_order_btn:'Жеткізу',
+    cancel_order_btn:'Бас тарту', toast_order_saved:'Тапсырыс сақталды', toast_order_cancelled:'Тапсырыс бас тартылды',
+    order_history_title:'Тапсырыстар тарихы', order_status_fulfilled:'Жеткізілді', order_status_cancelled:'Бас тартылды',
+    edit_order_title:'Тапсырысты өзгерту',
+    confirm_cancel_order:'Бұл тапсырысты бас тартасыз ба?', order_taken_label:'Тапсырыс алынды',
     choose_products_title:'Тауарды таңдаңыз', stock_prefix:'қалды:', add_btn:'Қосу',
     empty_no_products_title:'Тауар жоқ', empty_no_products_desc:'Алдымен "Тауарлар" бөлімінен тауар қосыңыз',
     customer_section_title:'Клиент (міндетті емес)', customer_ph:'Клиенттің аты', pick_btn:'Таңдау',
@@ -903,6 +940,7 @@ const I18N = {
     empty_no_history_title:'Сату тарихы бос', empty_no_history_desc:'Жаңа сатулар осында көрінеді',
     no_name_client:'Аты көрсетілмеген',
     clients_subtitle:'Клиенттер мен жеткізушілер',
+    total_clients_count_label:(n)=>`Барлық клиенттер: ${n}`,
     add_client_btn:'Клиент қосу', add_supplier_btn:'Жеткізуші қосу',
     tab_clients:'Клиенттер', tab_suppliers:'Жеткізушілер',
     search_client_ph:'Клиент іздеу...', search_supplier_ph:'Жеткізуші іздеу...',
@@ -944,6 +982,8 @@ const I18N = {
     debt_in_card_breakdown_label:'Қарыз төлемдері (карта)', expenses_breakdown_label:'Шығындар',
     withdrawals_breakdown_label:'Алынған қаражат', supplier_out_cash_breakdown_label:'Жеткізушіге төленді (қолма-қол)',
     supplier_out_card_breakdown_label:'Жеткізушіге төленді (карта)',
+    debt_upfront_cash_breakdown_label:'Дереу төленді, жаңа тапсырыстар (қолма-қол)',
+    debt_upfront_card_breakdown_label:'Дереу төленді, жаңа тапсырыстар (карта)',
     expense_btn:'Шығын', withdrawal_btn:'Алу',
     tab_debts:'Қарыздар', tab_cash_history:'Шығын/Алу',
     empty_no_debts_title:'Қарыз жоқ', empty_no_debts_desc:'Барлық шоттар төленген 🎉',
@@ -1073,6 +1113,13 @@ const I18N = {
     out_of_stock:'Tugadi', low_stock_suffix:'dona — kam qoldi',
     sales_subtitle:"Yangi sotuv qiling yoki tarixni ko'ring",
     tab_new_sale:'Yangi sotuv', tab_history:'Tarix', return_btn:'Qaytarish', return_btn_title:'Qaytarishni qabul qilish',
+    tab_orders:'Buyurtmalar', take_order_btn:'Buyurtma qabul qilish', save_order_btn:'Buyurtmani saqlash',
+    order_note_label:'Izoh (majburiy emas)', empty_no_orders_title:"Buyurtma yo'q",
+    empty_no_orders_desc:'"Buyurtma qabul qilish" tugmasi orqali qo\'shing', fulfill_order_btn:'Yetkazish',
+    cancel_order_btn:'Bekor qilish', toast_order_saved:'Buyurtma saqlandi', toast_order_cancelled:'Buyurtma bekor qilindi',
+    order_history_title:'Buyurtmalar tarixi', order_status_fulfilled:'Yetkazildi', order_status_cancelled:'Bekor qilindi',
+    edit_order_title:"Buyurtmani tahrirlash",
+    confirm_cancel_order:'Bu buyurtmani bekor qilasizmi?', order_taken_label:'Buyurtma qabul qilindi',
     choose_products_title:'Tovarlarni tanlang', stock_prefix:'qoldi:', add_btn:"Qo'shish",
     empty_no_products_title:"Tovar yo'q", empty_no_products_desc:"Avval \"Tovarlar\" bo'limidan tovar qo'shing",
     customer_section_title:'Mijoz (majburiy emas)', customer_ph:'Mijozning ismi', pick_btn:'Tanlash',
@@ -1081,6 +1128,7 @@ const I18N = {
     empty_no_history_title:"Sotuv tarixi bo'sh", empty_no_history_desc:'Yangi sotuvlar shu yerda ko\'rinadi',
     no_name_client:'Ismi kiritilmagan',
     clients_subtitle:"Mijozlar va yetkazib beruvchilar",
+    total_clients_count_label:(n)=>`Jami mijozlar: ${n}`,
     add_client_btn:"Mijoz qo'shish", add_supplier_btn:"Yetkazib beruvchi qo'shish",
     tab_clients:'Mijozlar', tab_suppliers:'Yetkazib beruvchilar',
     search_client_ph:'Mijoz qidirish...', search_supplier_ph:'Yetkazib beruvchi qidirish...',
@@ -1122,6 +1170,8 @@ const I18N = {
     debt_in_card_breakdown_label:"Qarz to'lovlari (karta)", expenses_breakdown_label:'Xarajatlar',
     withdrawals_breakdown_label:'Olingan mablag\'', supplier_out_cash_breakdown_label:"Yetkazib beruvchiga to'landi (naqd)",
     supplier_out_card_breakdown_label:"Yetkazib beruvchiga to'landi (karta)",
+    debt_upfront_cash_breakdown_label:"Darhol to'landi, yangi buyurtmalar (naqd)",
+    debt_upfront_card_breakdown_label:"Darhol to'landi, yangi buyurtmalar (karta)",
     expense_btn:'Xarajat', withdrawal_btn:'Olib qo\'yish',
     tab_debts:'Qarzlar', tab_cash_history:'Xarajat/Olib qo\'yish',
     empty_no_debts_title:"Qarz yo'q", empty_no_debts_desc:"Barcha hisoblar to'langan 🎉",
@@ -1251,6 +1301,13 @@ const I18N = {
     out_of_stock:'Tükendi', low_stock_suffix:'adet — azalıyor',
     sales_subtitle:'Yeni fiş oluşturun veya geçmişi görün',
     tab_new_sale:'Yeni satış', tab_history:'Geçmiş', return_btn:'İade', return_btn_title:'İade kabul et',
+    tab_orders:'Siparişler', take_order_btn:'Sipariş al', save_order_btn:'Siparişi kaydet',
+    order_note_label:'Not (isteğe bağlı)', empty_no_orders_title:'Sipariş yok',
+    empty_no_orders_desc:'"Sipariş al" düğmesiyle ekleyin', fulfill_order_btn:'Teslim et',
+    cancel_order_btn:'İptal et', toast_order_saved:'Sipariş kaydedildi', toast_order_cancelled:'Sipariş iptal edildi',
+    order_history_title:'Sipariş geçmişi', order_status_fulfilled:'Teslim edildi', order_status_cancelled:'İptal edildi',
+    edit_order_title:'Siparişi düzenle',
+    confirm_cancel_order:'Bu sipariş iptal edilsin mi?', order_taken_label:'Sipariş alındı',
     choose_products_title:'Ürünleri seçin', stock_prefix:'kaldı:', add_btn:'Ekle',
     empty_no_products_title:'Ürün yok', empty_no_products_desc:'Önce "Ürünler" bölümünden ürün ekleyin',
     customer_section_title:'Müşteri (isteğe bağlı)', customer_ph:'Müşteri adı', pick_btn:'Seç',
@@ -1259,6 +1316,7 @@ const I18N = {
     empty_no_history_title:'Satış geçmişi boş', empty_no_history_desc:'Yeni satış eklediğinizde burada görünür',
     no_name_client:'Ad girilmedi',
     clients_subtitle:'Müşteriler ve tedarikçiler',
+    total_clients_count_label:(n)=>`Toplam müşteri: ${n}`,
     add_client_btn:'Müşteri ekle', add_supplier_btn:'Tedarikçi ekle',
     tab_clients:'Müşteriler', tab_suppliers:'Tedarikçiler',
     search_client_ph:'Müşteri ara...', search_supplier_ph:'Tedarikçi ara...',
@@ -1300,6 +1358,8 @@ const I18N = {
     debt_in_card_breakdown_label:'Borç ödemeleri (kart)', expenses_breakdown_label:'Giderler',
     withdrawals_breakdown_label:'Para çekmeler', supplier_out_cash_breakdown_label:'Tedarikçiye ödenen (nakit)',
     supplier_out_card_breakdown_label:'Tedarikçiye ödenen (kart)',
+    debt_upfront_cash_breakdown_label:'Peşin ödenen, yeni siparişler (nakit)',
+    debt_upfront_card_breakdown_label:'Peşin ödenen, yeni siparişler (kart)',
     expense_btn:'Gider', withdrawal_btn:'Para çekme',
     tab_debts:'Borçlar', tab_cash_history:'Gider/Para çekme',
     empty_no_debts_title:'Borç yok', empty_no_debts_desc:'Tüm hesaplar ödendi 🎉',
@@ -1421,7 +1481,7 @@ function t(key){
 }
 
 const STATE_VERSION = 2;
-let state = { products: [], sales: [], clients: [], suppliers: [], stockIns: [], returns: [], expenses: [], withdrawals: [], purchases: [], debtPayments: [], supplierPayments: [], priceChanges: [], orderCounter: 0 };
+let state = { products: [], sales: [], clients: [], suppliers: [], stockIns: [], returns: [], expenses: [], withdrawals: [], purchases: [], debtPayments: [], supplierPayments: [], priceChanges: [], orderCounter: 0, orders: [] };
 let cart = {}; // productId -> qty (draft sale)
 let currentTab = 'dashboard';
 let invSearch = '';
@@ -1432,6 +1492,7 @@ let reportSubTab = 'products';
 let expandedReportClients = new Set();
 let confirmCashDelete = null;
 let salesSubTab = 'new';
+let confirmingCancelOrderId = null;
 let payMethod = 'cash';
 let discountType = 'percent';
 let discountValue = 0;
@@ -1523,6 +1584,7 @@ function normalizeState(s){
     const maxAssigned = s.sales.reduce((m,sale)=>Math.max(m, sale.orderNumber||0), 0);
     if(maxAssigned > s.orderCounter) s.orderCounter = maxAssigned;
   }
+  if(!Array.isArray(s.orders)) s.orders = [];
   s.version = STATE_VERSION;
   return s;
 }
@@ -1976,13 +2038,14 @@ function renderSales(){
     <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
       <div class="tabs" style="flex:1; margin-bottom:0;">
         <button class="${salesSubTab==='new'?'active':''}" data-subtab="new">${t('tab_new_sale')}</button>
+        <button class="${salesSubTab==='orders'?'active':''}" data-subtab="orders">${t('tab_orders')}${(() => { const p = state.orders.filter(o=>(o.status||'pending')==='pending').length; return p ? ` (${p})` : ''; })()}</button>
         <button class="${salesSubTab==='history'?'active':''}" data-subtab="history">${t('tab_history')}</button>
       </div>
       <button data-action="open-return" title="${t('return_btn_title')}" style="flex-shrink:0; display:flex; align-items:center; gap:5px; padding:9px 12px; border-radius:11px; border:1px solid var(--accent); background:var(--accent-soft); color:var(--accent); font-family:'Inter',sans-serif; font-weight:600; font-size:11.5px; cursor:pointer;">
         <span style="width:16px;height:16px; display:flex;">${ICONS.undo}</span> ${t('return_btn')}
       </button>
     </div>
-    ${salesSubTab==='new' ? renderNewSale() : renderSalesHistory()}
+    ${salesSubTab==='new' ? renderNewSale() : salesSubTab==='orders' ? renderOrdersTab() : renderSalesHistory()}
   `;
 }
 
@@ -2093,6 +2156,204 @@ function renderSalesHistory(){
   `;
 }
 
+function renderOrdersTab(){
+  const all = [...state.orders].sort((a,b)=>b.date.localeCompare(a.date));
+  const pending = all.filter(o=>(o.status||'pending')==='pending');
+  const history = all.filter(o=>o.status==='fulfilled' || o.status==='cancelled');
+
+  const renderOrderRow = (o) => {
+    const productLabel = o.items.map(i=>`${i.name} · ${i.qty} ${t('unit_suffix')}`).join(', ');
+    const orderTotal = o.items.reduce((s,i)=>s+i.price*i.qty,0);
+    const isPending = (o.status||'pending')==='pending';
+    return `
+      <div class="row" style="display:block;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <div class="who">${o.customer || t('default_customer')}</div>
+            <div class="meta">${productLabel}</div>
+            ${o.note ? `<div class="meta" style="margin-top:2px; font-style:italic;">${o.note}</div>` : ''}
+            <div class="meta" style="margin-top:2px;">${new Date(o.date).toLocaleDateString('ru-RU')}</div>
+            ${!isPending ? `<span class="badge ${o.status==='fulfilled'?'paid':'debt'} inline" style="margin-top:4px;">${o.status==='fulfilled'?t('order_status_fulfilled'):t('order_status_cancelled')}</span>` : ''}
+          </div>
+          <div class="amt">${fmt(orderTotal)}</div>
+        </div>
+        ${isPending ? `
+          <div style="display:flex; gap:8px; margin-top:10px;">
+            <button data-action="fulfill-order" data-id="${o.id}" style="flex:1; padding:9px; border-radius:9px; border:none; background:var(--primary); color:#fff; font-weight:600; font-size:12.5px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;"><span style="width:16px;height:16px; display:flex;">${ICONS.check}</span> ${t('fulfill_order_btn')}</button>
+            <button data-action="edit-order" data-id="${o.id}" style="padding:9px 14px; border-radius:9px; border:1px solid var(--border); background:var(--paper); color:var(--primary); font-weight:600; font-size:12.5px; cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:16px;height:16px; display:flex;">${ICONS.edit}</span></button>
+            <button data-action="ask-cancel-order" data-id="${o.id}" style="padding:9px 14px; border-radius:9px; border:1px solid var(--debt-soft); background:var(--paper); color:var(--debt); font-weight:600; font-size:12.5px; cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:16px;height:16px; display:flex;">${ICONS.trash}</span></button>
+          </div>
+          ${confirmingCancelOrderId===o.id ? `
+            <div style="margin-top:10px; padding:10px; border-radius:10px; background:var(--debt-soft);">
+              <div style="font-size:12.5px; font-weight:600; color:var(--debt); margin-bottom:8px;">${t('confirm_cancel_order')}</div>
+              <div style="display:flex; gap:8px;">
+                <button data-action="confirm-cancel-order" data-id="${o.id}" style="flex:1; padding:8px; border-radius:8px; border:none; background:var(--debt); color:#fff; font-weight:600; font-size:12.5px; cursor:pointer;">${t('cancel_order_btn')}</button>
+                <button data-action="dismiss-cancel-order" style="flex:1; padding:8px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); font-weight:600; font-size:12.5px; cursor:pointer;">${t('no_cancel')}</button>
+              </div>
+            </div>
+          ` : ''}
+        ` : ''}
+      </div>
+    `;
+  };
+
+  return `
+    <button class="btn-full" data-action="take-order" style="margin-bottom:14px;">${ICONS.plus} ${t('take_order_btn')}</button>
+    <div class="card" style="margin-bottom:${history.length?'14px':'0'};">
+      ${pending.length ? pending.map(renderOrderRow).join('') : emptyBlock(t('empty_no_orders_title'), t('empty_no_orders_desc'))}
+    </div>
+    ${history.length ? `
+      <div class="section-head" style="margin-top:0;"><h3>${t('order_history_title')}</h3></div>
+      <div class="card">
+        ${history.map(renderOrderRow).join('')}
+      </div>
+    ` : ''}
+  `;
+}
+
+function openTakeOrderSheet(existing){
+  const orderCart = {};
+  if(existing) existing.items.forEach(i=>{ orderCart[i.productId] = i.qty; });
+  let orderCustomerDraft = existing ? (existing.customer||'') : '';
+
+  function bodyHtml(){
+    const total = Object.entries(orderCart).filter(([,q])=>q>0).reduce((sum,[pid,q])=>{
+      const p = state.products.find(x=>x.id===pid);
+      return sum + (p ? p.price*q : 0);
+    },0);
+    return `
+      <div class="sheet-head">
+        <h2>${existing ? t('edit_order_title') : t('take_order_btn')}</h2>
+        <button data-action="close-sheet">${ICONS.x}</button>
+      </div>
+      <div class="section-head" style="margin-top:0;"><h3>${t('choose_products_title')}</h3></div>
+      ${state.products.length ? state.products.map(p=>{
+        const q = orderCart[p.id]||0;
+        return `
+          <div class="pick-item">
+            <div class="info">
+              <div class="name">${p.name}</div>
+              <div class="price">${fmt(p.price)}</div>
+            </div>
+            ${q>0 ? `
+              <div class="stepper">
+                <button data-oaction="dec" data-id="${p.id}">−</button>
+                <span>${q}</span>
+                <button data-oaction="inc" data-id="${p.id}">+</button>
+              </div>
+            ` : `<button class="add-btn" data-oaction="inc" data-id="${p.id}">${t('add_btn')}</button>`}
+          </div>
+        `;
+      }).join('') : emptyBlock(t('empty_no_products_title'), t('empty_no_products_desc'))}
+
+      <div class="section-head"><h3>${t('customer_section_title')}</h3></div>
+      <div class="field-row" style="position:relative;">
+        <div class="field" style="flex:1;">
+          <input id="order-customer" type="text" value="${orderCustomerDraft}" placeholder="${t('customer_ph')}" autocomplete="off">
+          <div id="order-customer-suggestions" style="display:none; position:absolute; top:100%; left:0; right:56px; background:var(--paper); border:1px solid var(--border); border-radius:10px; margin-top:4px; box-shadow:0 6px 16px rgba(0,0,0,0.12); z-index:20; max-height:180px; overflow-y:auto;"></div>
+        </div>
+        <button id="order-pick-client-btn" style="flex-shrink:0; display:flex; align-items:center; gap:6px; padding:0 14px; border-radius:9px; border:1px solid var(--border); background:var(--paper); color:var(--primary); font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; cursor:pointer;">
+          <span style="width:16px;height:16px; display:flex;">${ICONS.people}</span> ${t('pick_btn')}
+        </button>
+      </div>
+      <div class="field">
+        <label>${t('order_note_label')}</label>
+        <input id="order-note" type="text" placeholder="" value="${existing ? (existing.note||'') : ''}">
+      </div>
+
+      <div class="ledger-card">
+        <div class="receipt-total">
+          <span class="label">${t('total_label')}</span>
+          <span class="value">${fmt(total)}</span>
+        </div>
+      </div>
+      <div style="height:14px;"></div>
+      <button class="btn-full" id="save-order" ${Object.values(orderCart).every(q=>!q) ? 'disabled' : ''}>${ICONS.check} ${existing ? t('save_btn') : t('save_order_btn')}</button>
+    `;
+  }
+
+  openSheet(bodyHtml());
+  bind();
+
+  function bind(){
+    document.querySelectorAll('[data-oaction="inc"]').forEach(b=>b.addEventListener('click', ()=>{
+      const id = b.dataset.id;
+      orderCart[id] = (orderCart[id]||0) + 1;
+      refresh();
+    }));
+    document.querySelectorAll('[data-oaction="dec"]').forEach(b=>b.addEventListener('click', ()=>{
+      const id = b.dataset.id;
+      orderCart[id] = Math.max(0, (orderCart[id]||0) - 1);
+      refresh();
+    }));
+    const custInput = document.getElementById('order-customer');
+    const custSuggestions = document.getElementById('order-customer-suggestions');
+    if(custInput){
+      custInput.addEventListener('input', e=>{
+        orderCustomerDraft = e.target.value;
+        if(!custSuggestions) return;
+        const q = e.target.value.trim().toLowerCase();
+        if(!q){ custSuggestions.style.display = 'none'; custSuggestions.innerHTML = ''; return; }
+        const names = [...new Set(customerStats().map(c=>c.name))]
+          .filter(n=>n!==t('no_name_client') && n.toLowerCase().includes(q))
+          .slice(0, 6);
+        if(names.length===0){ custSuggestions.style.display = 'none'; custSuggestions.innerHTML = ''; return; }
+        custSuggestions.innerHTML = names.map(n=>`
+          <div class="order-cust-suggestion" data-name="${n}" style="padding:10px 14px; cursor:pointer; font-size:13.5px; border-bottom:1px solid var(--border);">${n}</div>
+        `).join('');
+        custSuggestions.style.display = 'block';
+        custSuggestions.querySelectorAll('.order-cust-suggestion').forEach(row=>{
+          row.addEventListener('click', ()=>{
+            custInput.value = row.dataset.name;
+            orderCustomerDraft = row.dataset.name;
+            custSuggestions.style.display = 'none';
+            custSuggestions.innerHTML = '';
+          });
+        });
+      });
+      custInput.addEventListener('blur', ()=>{
+        setTimeout(()=>{ if(custSuggestions){ custSuggestions.style.display = 'none'; } }, 150);
+      });
+    }
+    const orderPickBtn = document.getElementById('order-pick-client-btn');
+    if(orderPickBtn) orderPickBtn.addEventListener('click', ()=>{
+      openPickClientSheet((name)=>{
+        orderCustomerDraft = name;
+        openSheet(bodyHtml());
+        bind();
+      });
+    });
+    const saveBtn = document.getElementById('save-order');
+    if(saveBtn) saveBtn.onclick = async (e) => {
+      if(e.target.disabled) return;
+      const items = Object.entries(orderCart).filter(([,q])=>q>0).map(([pid,q])=>{
+        const p = state.products.find(x=>x.id===pid);
+        return {productId:pid, name:p.name, price:p.price, qty:q};
+      });
+      if(items.length===0) return;
+      e.target.disabled = true;
+      const customer = (document.getElementById('order-customer')?.value ?? orderCustomerDraft).trim();
+      const note = (document.getElementById('order-note')?.value || '').trim();
+      if(existing){
+        existing.items = items;
+        existing.customer = customer;
+        existing.note = note;
+      } else {
+        state.orders.push({id:uid(), date:nowISO(), customer, items, note, status:'pending'});
+      }
+      await saveData();
+      closeSheet();
+      render();
+      showToast(existing ? t('toast_sale_updated') : t('toast_order_saved'));
+    };
+  }
+
+  function refresh(){
+    document.getElementById('sheet-body').innerHTML = bodyHtml();
+    bind();
+  }
+}
+
 /* ---------------- Clients ---------------- */
 function customerStats(){
   const map = {};
@@ -2149,8 +2410,12 @@ function renderClientsList(){
   const paidAll = Math.max(0, totalAll - debtAll);
   const paidPct = totalAll>0 ? Math.round((paidAll/totalAll)*100) : 100;
   const debtPct = 100 - paidPct;
+  const totalClientCount = customerStats().length;
 
   return `
+    ${totalClientCount>0 ? `
+      <div style="font-size:12.5px; font-weight:600; color:var(--muted); margin-bottom:10px;">${t('total_clients_count_label')(totalClientCount)}</div>
+    ` : ''}
     ${totalAll>0 ? `
       <div class="card" style="margin-bottom:14px;">
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
@@ -2388,7 +2653,10 @@ function openClientSheet(key){
                     </div>
                     <div style="text-align:right;">
                       <div class="amt">${fmt(s.total)}</div>
-                      ${s.status==='debt' && s.paidAmount>0 ? `<div class="meta" style="color:var(--primary);">${t('current_debt_inline_prefix')} ${fmt(saleOutstanding(s))}</div>` : ''}
+                      ${s.status==='debt' ? `
+                        ${s.paidAmount>0 ? `<div class="meta" style="color:var(--muted);">${t('receipt_paid_amount_label')} ${fmt(s.paidAmount)}</div>` : ''}
+                        <div class="meta" style="color:var(--debt);">${t('current_debt_inline_prefix')} ${fmt(saleOutstanding(s))}</div>
+                      ` : ''}
                       <div style="display:flex; gap:6px; margin-top:6px; justify-content:flex-end;">
                         <button data-action="edit-sale" data-id="${s.id}" title="${t('edit_sale_title')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--primary); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.edit}</span></button>
                         <button data-action="ask-delete-sale" data-id="${s.id}" title="${t('yes_delete')}" style="min-width:34px;min-height:34px; border-radius:8px; border:1px solid var(--debt-soft); background:var(--paper); color:var(--debt); cursor:pointer; display:flex; align-items:center; justify-content:center;"><span style="width:15px;height:15px; display:flex;">${ICONS.trash}</span></button>
@@ -2790,7 +3058,11 @@ function cashStats(){
   const supplierPaymentsOutCard = state.supplierPayments.reduce((s,x)=> x.method==='card' ? s+x.amount : s, 0);
   const debtPaymentsIn = debtPaymentsInCash + debtSalesUpfrontCash;
   const supplierPaymentsOut = supplierPaymentsOutCash;
-  const onHand = cashSales + debtPaymentsIn - totalExpenses - totalWithdrawals - supplierPaymentsOut;
+  const onHand = (cashSales + cardSales)
+    + (debtPaymentsInCash + debtPaymentsInCard)
+    + (debtSalesUpfrontCash + debtSalesUpfrontCard)
+    - totalExpenses - totalWithdrawals
+    - (supplierPaymentsOutCash + supplierPaymentsOutCard);
   return {
     cashSales, cardSales, totalExpenses, totalWithdrawals,
     debtPaymentsIn, debtPaymentsInCash, debtPaymentsInCard,
@@ -2827,6 +3099,7 @@ function renderDebts(){
         const rows = [
           [t('cash_sales_breakdown_label'), cs.cashSales, '+'],
           [t('debt_in_cash_breakdown_label'), cs.debtPaymentsInCash, '+'],
+          [t('debt_upfront_cash_breakdown_label'), cs.debtSalesUpfrontCash, '+'],
           [t('expenses_breakdown_label'), cs.totalExpenses, '−'],
           [t('withdrawals_breakdown_label'), cs.totalWithdrawals, '−'],
           [t('supplier_out_cash_breakdown_label'), cs.supplierPaymentsOutCash, '−'],
@@ -2834,6 +3107,7 @@ function renderDebts(){
         const cardRows = [
           [t('card_sales_breakdown_label'), cs.cardSales],
           [t('debt_in_card_breakdown_label'), cs.debtPaymentsInCard],
+          [t('debt_upfront_card_breakdown_label'), cs.debtSalesUpfrontCard],
           [t('supplier_out_card_breakdown_label'), cs.supplierPaymentsOutCard],
         ].filter(r=>r[1]>0);
         return rows.map(([label,val,sign])=>`
@@ -4451,7 +4725,8 @@ function renderInvoiceCanvas(sale, priorDebt){
   headerHeight += 8;
 
   const totalRows = sale.items.length + 2; // items + subtotal row + grand total row
-  const canvasHeight = headerHeight + rowHeight*(1+totalRows) + 60;
+  const priorDebtRows = priorDebt>0 ? 4 : 0; // separator + 3 lines
+  const canvasHeight = headerHeight + rowHeight*(1+totalRows) + 60 + priorDebtRows*22;
 
   const canvas = document.createElement('canvas');
   canvas.width = width;
@@ -4521,6 +4796,27 @@ function renderInvoiceCanvas(sale, priorDebt){
   ctx.font = '12px Arial, sans-serif';
   ctx.fillStyle = '#444';
   ctx.fillText(t('invoice_summary')(totalQty, fmt(sale.total)), padding, y);
+  y += 22;
+
+  if(priorDebt>0){
+    y += 6;
+    ctx.strokeStyle = '#999';
+    ctx.setLineDash([4,3]);
+    ctx.beginPath(); ctx.moveTo(tableLeft, y); ctx.lineTo(tableRight, y); ctx.stroke();
+    ctx.setLineDash([]);
+    y += 14;
+    ctx.font = '12px Arial, sans-serif';
+    ctx.fillStyle = '#141414';
+    ctx.textAlign = 'right';
+    ctx.fillText(`${t('receipt_prior_debt_prefix')} ${fmt(priorDebt)}`, tableRight, y);
+    y += 20;
+    ctx.fillText(`${t('receipt_new_order_prefix')} ${fmt(sale.total)}`, tableRight, y);
+    y += 22;
+    ctx.font = 'bold 14px Arial, sans-serif';
+    ctx.fillStyle = '#AE3B26';
+    ctx.fillText(`${t('receipt_grand_total_prefix')} ${fmt(priorDebt+sale.total)}`, tableRight, y);
+    ctx.textAlign = 'left';
+  }
 
   return canvas;
 }
@@ -4697,6 +4993,40 @@ function bindEvents(){
   el.querySelectorAll('[data-action="edit-sale"]').forEach(row=>{
     row.addEventListener('click', ()=>openEditSaleSheet(row.dataset.id));
   });
+  el.querySelectorAll('[data-action="take-order"]').forEach(b=>b.addEventListener('click', ()=>openTakeOrderSheet()));
+  el.querySelectorAll('[data-action="edit-order"]').forEach(b=>b.addEventListener('click', ()=>{
+    const order = state.orders.find(o=>o.id===b.dataset.id);
+    if(order) openTakeOrderSheet(order);
+  }));
+  el.querySelectorAll('[data-action="fulfill-order"]').forEach(b=>b.addEventListener('click', ()=>{
+    const order = state.orders.find(o=>o.id===b.dataset.id);
+    if(!order) return;
+    cart = {};
+    order.items.forEach(i=>{ cart[i.productId] = i.qty; });
+    window._customerDraft = order.customer || '';
+    order.status = 'fulfilled';
+    order.fulfilledDate = nowISO();
+    saveData();
+    currentTab='sales'; salesSubTab='new';
+    render();
+    showToast(t('order_taken_label'));
+  }));
+  el.querySelectorAll('[data-action="ask-cancel-order"]').forEach(b=>b.addEventListener('click', ()=>{
+    confirmingCancelOrderId = b.dataset.id;
+    render();
+  }));
+  el.querySelectorAll('[data-action="dismiss-cancel-order"]').forEach(b=>b.addEventListener('click', ()=>{
+    confirmingCancelOrderId = null;
+    render();
+  }));
+  el.querySelectorAll('[data-action="confirm-cancel-order"]').forEach(b=>b.addEventListener('click', async ()=>{
+    const order = state.orders.find(o=>o.id===b.dataset.id);
+    if(order){ order.status = 'cancelled'; order.cancelledDate = nowISO(); }
+    confirmingCancelOrderId = null;
+    await saveData();
+    render();
+    showToast(t('toast_order_cancelled'));
+  }));
   el.querySelectorAll('[data-action="add-product"]').forEach(b=>b.addEventListener('click', ()=>openAddProductSheet(null)));
   el.querySelectorAll('[data-action="stock-in"]').forEach(b=>b.addEventListener('click', openStockInSheet));
   el.querySelectorAll('[data-action="open-return"]').forEach(b=>b.addEventListener('click', openReturnPickSheet));
